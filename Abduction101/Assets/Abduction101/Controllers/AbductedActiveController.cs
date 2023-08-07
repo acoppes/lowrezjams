@@ -60,8 +60,8 @@ namespace Abduction101.Controllers
             activeController.ReleaseControl(this);
             states.ExitState("IsBeingAbducted");
             
-            ref var model = ref entity.Get<ModelComponent>();
-            model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
+            // ref var model = ref entity.Get<ModelComponent>();
+            // model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
 
             entity.Get<GravityComponent>().disabled = false;
         }

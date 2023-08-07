@@ -61,8 +61,9 @@ namespace Abduction101.Controllers
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
-            
-            entity.Get<LookingDirection>().value = Vector3.right;
+
+            // ref var lookingDirection = ref entity.Get<LookingDirection>();
+            // lookingDirection.value = Vector3.right;
         }
 
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)
