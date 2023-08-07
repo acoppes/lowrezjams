@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7721764166444902382}
   m_Father: {fileID: 1978120019607625393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &553316125310483305
@@ -52,8 +53,8 @@ MonoBehaviour:
     cooldownType: 0
     resetCooldownType: 0
     startsLoaded: 0
-    autoTarget: 0
-    targeting: {fileID: 0}
+    autoTarget: 1
+    targeting: {fileID: 1544093665289386659}
     charges: 0
 --- !u!1 &3257395755330465535
 GameObject:
@@ -188,6 +189,7 @@ GameObject:
   - component: {fileID: 6069341317903507372}
   - component: {fileID: 7352355729040182322}
   - component: {fileID: 1127852944328088735}
+  - component: {fileID: 5693826873448291695}
   m_Layer: 0
   m_Name: Ufo_Definition
   m_TagString: Untagged
@@ -423,6 +425,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityDefinitions: []
   abilitiesParent: {fileID: 1978120019607625393}
+--- !u!114 &5693826873448291695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951763693678052241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40049d4fd6346e2b82285e47ad5e3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6474459317013681271
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,3 +484,59 @@ MonoBehaviour:
   abductionSpeedMultiplier: 0.25
   particlesPrefab: {fileID: 8084698804474018931, guid: 2298a1348f1217142a34c00099b452df, type: 3}
   abductEffectDefinition: {fileID: 6331399880278644861, guid: 31185e82f34ac9946a0bd34ab235dce2, type: 3}
+--- !u!1 &7690907909632291922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7721764166444902382}
+  - component: {fileID: 1544093665289386659}
+  m_Layer: 0
+  m_Name: Targeting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7721764166444902382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690907909632291922}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2020642281753268348}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1544093665289386659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690907909632291922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc53ac743191464ebbe35487a3290ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targeting:
+    areaType: 0
+    distanceType: 2
+    range:
+      Min: 0
+      Max: 0.3
+    playerAllianceType: 1
+    aliveType: 2
+    angle:
+      Min: 0
+      Max: 360
+    sorter: {fileID: 0}
