@@ -1,5 +1,92 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2237637122833686035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020642281753268348}
+  - component: {fileID: 553316125310483305}
+  m_Layer: 0
+  m_Name: Abduct
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2020642281753268348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237637122833686035}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978120019607625393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553316125310483305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237637122833686035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355c2bdb380742b6b5e6ff65c177503e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityDefinition:
+    name: Abduct
+    cooldown: 0
+    startTime: 0
+    executionType: 0
+    cooldownType: 0
+    resetCooldownType: 0
+    startsLoaded: 0
+    autoTarget: 0
+    targeting: {fileID: 0}
+    charges: 0
+--- !u!1 &3257395755330465535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1978120019607625393}
+  m_Layer: 0
+  m_Name: Abilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1978120019607625393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257395755330465535}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2020642281753268348}
+  m_Father: {fileID: 4324182910784962375}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3343060640671077209
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +187,7 @@ GameObject:
   - component: {fileID: 3649393798615168084}
   - component: {fileID: 6069341317903507372}
   - component: {fileID: 7352355729040182322}
+  - component: {fileID: 1127852944328088735}
   m_Layer: 0
   m_Name: Ufo_Definition
   m_TagString: Untagged
@@ -121,6 +209,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 525927786554892500}
+  - {fileID: 1978120019607625393}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8586836630488564040
@@ -320,6 +409,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minZ: -0.5
   maxZ: 0.5
+--- !u!114 &1127852944328088735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951763693678052241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe43ae9f4bc4658a12d27dca71ced3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityDefinitions: []
+  abilitiesParent: {fileID: 1978120019607625393}
 --- !u!1 &6474459317013681271
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,3 +467,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb85cc157e1fd245b4398aa8298da4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abductEffectDefinition: {fileID: 6331399880278644861, guid: 31185e82f34ac9946a0bd34ab235dce2, type: 3}
