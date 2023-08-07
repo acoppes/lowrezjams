@@ -13,7 +13,7 @@ namespace Abduction101.Controllers
             movementComponent.speed = movementComponent.baseSpeed;
             
             // TODO: acceleration
-            movementComponent.movingDirection = entity.Get<InputComponent>().direction3d();
+            // movementComponent.movingDirection = entity.Get<InputComponent>().direction3d();
             
             // Debug.Log(movementComponent.movingDirection);
         }
