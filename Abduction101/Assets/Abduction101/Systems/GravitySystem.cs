@@ -18,7 +18,7 @@ namespace Abduction101.Systems
             foreach (var entity in filter.Value)
             {
                 ref var position = ref filter.Pools.Inc1.Get(entity);
-                var gravity = filter.Pools.Inc2.Get(entity);
+                ref var gravity = ref filter.Pools.Inc2.Get(entity);
                 ref var velocity = ref filter.Pools.Inc3.Get(entity);
 
                 if (gravity.disabled)
@@ -35,7 +35,7 @@ namespace Abduction101.Systems
                 v.y += gravity.scale * gravityAcceleration * dt;
                 
                 var p = position.value;
-                p.y += v.y;
+                p.y += v.y * dt;
 
                 gravity.inContactWithGround = p.y <= 0;
 
@@ -43,6 +43,13 @@ namespace Abduction101.Systems
                 {
                     p.y = 0;
                     v.y = 0;
+                    gravity.groundContactTime += dt;
+                    gravity.timeSinceGroundContact = 0;
+                }
+                else
+                {
+                    gravity.groundContactTime = 0;
+                    gravity.timeSinceGroundContact += dt;
                 }
 
                 position.value = p;

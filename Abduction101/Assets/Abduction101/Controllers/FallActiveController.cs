@@ -1,5 +1,4 @@
-﻿using Abduction101.Components;
-using Game.Components;
+﻿using Game.Components;
 using Game.Controllers;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Components;
@@ -9,31 +8,33 @@ using UnityEngine;
 
 namespace Abduction101.Controllers
 {
-    public class AbductedAbilityController : ControllerBase, IUpdate, IActiveController
+    public class FallActiveController : ControllerBase, IUpdate, IActiveController
     {
         public void OnUpdate(World world, Entity entity, float dt)
         {
             ref var states = ref entity.Get<StatesComponent>();
-            ref var canBeAbducted = ref entity.Get<CanBeAbductedComponent>();
-            ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
-            if (states.HasState("IsBeingAbducted"))
+            ref var activeController = ref entity.Get<ActiveControllerComponent>();
+            var position = entity.Get<PositionComponent>();
+            var gravity = entity.Get<GravityComponent>();
+            
+            if (states.HasState("Falling"))
             {
-                if (!canBeAbducted.isBeingAbducted)
+                if (gravity.inContactWithGround)
                 {
-                    StopAbduction(entity);
+                    StopFalling(entity);
                 }
                 
                 return;
             }
             
-            if (canBeAbducted.isBeingAbducted && activeController.CanInterrupt(entity, this))
+            if (position.value.y > 0 && !gravity.inContactWithGround && !gravity.disabled && activeController.CanInterrupt(entity, this))
             {
-                StartAbduction(entity);
+                StartFalling(entity);
             }
         }
 
-        private void StartAbduction(Entity entity)
+        private void StartFalling(Entity entity)
         {
             ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
@@ -44,36 +45,39 @@ namespace Abduction101.Controllers
             movement.speed = 0;
             movement.movingDirection = Vector3.zero;
             
-            states.EnterState("IsBeingAbducted");
+            states.EnterState("Falling");
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.Rotate;
-
-            entity.Get<GravityComponent>().disabled = true;
         }
         
-        private void StopAbduction(Entity entity)
+        private void StopFalling(Entity entity)
         {
             ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             activeController.ReleaseControl(this);
-            states.ExitState("IsBeingAbducted");
+            states.ExitState("Falling");
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
-
-            entity.Get<GravityComponent>().disabled = false;
+            
+            entity.Get<LookingDirection>().value = Vector3.right;
         }
 
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)
         {
+            if (activeController is AbductedActiveController)
+            {
+                return true;
+            }
+            
             return false;
         }
 
         public void OnInterrupt(Entity entity, IActiveController activeController)
         {
-            throw new System.NotImplementedException();
+            StopFalling(entity);
         }
     }
 }
