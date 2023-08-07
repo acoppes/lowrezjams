@@ -22,3 +22,9 @@ MonoBehaviour:
     frames:
     - sprite: {fileID: 21300000, guid: 29ad414a1d11f7e4e8ebfca23c62f221, type: 3}
       time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 569c928b2f3853244ae2c336071fe8bc, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: f9eb364f5cf43394c97b766514c3401a, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: db88db34758ecc040bcbf72c2c35d8b2, type: 3}
+      time: 0.06666667

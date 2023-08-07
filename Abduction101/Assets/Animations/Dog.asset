@@ -18,3 +18,13 @@ MonoBehaviour:
     frames:
     - sprite: {fileID: 21300000, guid: 23923dd05d1343a418a2e57e39629909, type: 3}
       time: 0.06666667
+  - name: Walk
+    frames:
+    - sprite: {fileID: 21300000, guid: 16939b8bba9019c4dac6296441e7b379, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 2d814c7f93f99e94d89b34175c0c3a52, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 28089c314daee164d9223f5995de6b1b, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 5abcaa6669342c94eb6fbd5351bd9162, type: 3}
+      time: 0.06666667
