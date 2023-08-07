@@ -17,6 +17,22 @@
       },
       "url": "https://package.openupm.com"
     },
+    "com.esotericsoftware.spine.spine-csharp": {
+      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-csharp/src#4.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2c79b368fb5be841d81851754a93d83e44953a6b"
+    },
+    "com.esotericsoftware.spine.spine-unity": {
+      "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Assets/Spine#4.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.esotericsoftware.spine.spine-csharp": "4.1.0"
+      },
+      "hash": "2c79b368fb5be841d81851754a93d83e44953a6b"
+    },
     "com.gemserk.aseprite": {
       "version": "https://github.com/acoppes/unity-gemserk-utilities.git?path=/Packages/com.gemserk.aseprite",
       "depth": 0,
@@ -62,6 +78,15 @@
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
+    },
+    "com.gemserk.spine": {
+      "version": "https://github.com/acoppes/unity-gemserk-utilities.git?path=/Packages/com.gemserk.spine",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.gemserk.utilities": "0.0.3"
+      },
+      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
     },
     "com.gemserk.tools.gameobjectbrush": {
       "version": "0.0.9",
