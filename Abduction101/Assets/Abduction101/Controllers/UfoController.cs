@@ -1,5 +1,6 @@
 using Game.Components;
 using Game.Components.Abilities;
+using Game.Systems;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Components;
 using Gemserk.Leopotam.Ecs.Controllers;
@@ -8,15 +9,24 @@ using UnityEngine;
 
 namespace Abduction101.Controllers
 {
-    public class UfoController : ControllerBase, IUpdate
+    public class UfoController : ControllerBase, IUpdate, IInit
     {
         public float abductionSpeedMultiplier = 0.25f;
+
+        public GameObject particlesPrefab;
         
         [EntityDefinition]
         [SerializeField]
         private Object abductEffectDefinition;
 
+        private ParticleSystem particles;
         private Entity abductEffect;
+        
+        public void OnInit(World world, Entity entity)
+        {
+            particles = GameObject.Instantiate(particlesPrefab).GetComponent<ParticleSystem>();
+            particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
@@ -44,6 +54,10 @@ namespace Abduction101.Controllers
                     abductEffect = world.CreateEntity(abductEffectDefinition);
                     abductEffect.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
                     
+                    particles.Play();
+                    particles.transform.position =
+                        GamePerspective.ConvertFromWorld(new Vector3(position.value.x, 0, position.value.z));
+                    
                     // spawn definition etc
                     return;
                 }
@@ -57,6 +71,8 @@ namespace Abduction101.Controllers
                 
                 // update abduct effect position to my ground position...
                 abductEffect.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
+                particles.transform.position =
+                    GamePerspective.ConvertFromWorld(new Vector3(position.value.x, 0, position.value.z));
                 
                 if (!input.button1().isPressed)
                 {
@@ -66,10 +82,14 @@ namespace Abduction101.Controllers
                     abductEffect.Get<DestroyableComponent>().destroy = true;
                     abductEffect = Entity.NullEntity;
                     
+                    particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                    
                     // destroy abduct effect
                     return;
                 }
             }
         }
+
+
     }
 }

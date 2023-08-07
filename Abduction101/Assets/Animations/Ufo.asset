@@ -18,6 +18,32 @@ MonoBehaviour:
     frames:
     - sprite: {fileID: 21300000, guid: 2e390a172062d6740b28eca4eab9685f, type: 3}
       time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 2f36c7ea68a3cc743a339816bafb17f8, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: d36077f1e3955f64e84e74c78c1f9273, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 661b9e368cab50c4da99511b291244f1, type: 3}
+      time: 0.06666667
+  - name: None
+    frames:
+    - sprite: {fileID: 21300000, guid: 8048ed0a58da0a5438bc6074f3a59591, type: 3}
+      time: 0.06666667
+  - name: Unused
+    frames:
+    - sprite: {fileID: 21300000, guid: 65baad4208cc58042abfb4fc60c8f2ac, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: b755daabfb0002e48afccafd7ce632b5, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 8d97eb1a6c34ab34a904c41fcfe8b10a, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: e7364cb344c0c5e45867424e0b32c1d0, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: bf3ca99ba03a4d84bb7a1845f7f95e57, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: ae778b057f19603449f37c139845dece, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 4bec04fd1d3130848ac20042009bdb01, type: 3}
+      time: 0.06666667
   - name: Walk
     frames:
     - sprite: {fileID: 21300000, guid: 29ad414a1d11f7e4e8ebfca23c62f221, type: 3}

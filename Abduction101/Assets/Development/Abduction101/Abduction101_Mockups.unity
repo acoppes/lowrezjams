@@ -1360,6 +1360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abductionSpeedMultiplier: 0.25
+  particlesPrefab: {fileID: 0}
   abductEffectDefinition: {fileID: 0}
 --- !u!1 &154568012
 GameObject:
@@ -17839,6 +17840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abductionSpeedMultiplier: 0.25
+  particlesPrefab: {fileID: 0}
   abductEffectDefinition: {fileID: 0}
 --- !u!1 &1321982940
 GameObject:
@@ -20230,6 +20232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abductionSpeedMultiplier: 0.25
+  particlesPrefab: {fileID: 0}
   abductEffectDefinition: {fileID: 0}
 --- !u!1 &1595365063
 GameObject:
