@@ -14,7 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sourceFolder: Assets/Sprites/Abduction101/AbductionEffect
   animations:
+  - name: Death
+    frames:
+    - sprite: {fileID: 21300000, guid: 71603aef43bfcff4398605192c8cb949, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 78c8c708c3333af459484d2641e345d5, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: dc1e2d26b6609d84c9d05c22a80e4701, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 8ceaaa56590d75347818c0bae6359444, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 741a2d8ddf7ee4c4a87024d677af5155, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 64e6e273bc31e8344a2d2bedf5ab7f56, type: 3}
+      time: 0.06666667
   - name: Idle
     frames:
     - sprite: {fileID: 21300000, guid: 70521f21fd476b7418650544a01543b2, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: d60232fd5b02bf448a25a95f9989e481, type: 3}
+      time: 0.06666667
+  - name: Spawn
+    frames:
+    - sprite: {fileID: 21300000, guid: 924b1c1a6b6651f41ac562d5f7d4f91f, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: b54549bdda26d0e4fbeb603d6b299c9d, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: b4cefc770b8be7c409a3df59ab8104de, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 66d8d1de4b6c655459cc7d890d08a5a7, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 44c535907090d5643bd59cb08bddef08, type: 3}
       time: 0.06666667
