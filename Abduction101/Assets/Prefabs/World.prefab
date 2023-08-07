@@ -2144,6 +2144,8 @@ Transform:
   - {fileID: 6129065792352871996}
   - {fileID: 6416209617088154990}
   - {fileID: 6416209617000349797}
+  - {fileID: 9181770695527839816}
+  - {fileID: 4648277252369267353}
   - {fileID: 7618337946194906968}
   - {fileID: 2203536456029660583}
   - {fileID: 1251785864685597058}
@@ -3491,6 +3493,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVerticalVelocity: 20
+--- !u!1 &8285287747933813634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9181770695527839816}
+  - component: {fileID: 1102552455826923181}
+  m_Layer: 0
+  m_Name: AbductionSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9181770695527839816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285287747933813634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6416209615785311620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102552455826923181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285287747933813634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe69e12e0624a44801899ba2dbfbb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abductionAngle: 23
 --- !u!1 &8542196370403035039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,6 +3626,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facfe67cecdf437885689a94dcf12c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8656948644631587573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4648277252369267353}
+  - component: {fileID: 3691867006897480538}
+  m_Layer: 0
+  m_Name: GravitySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4648277252369267353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656948644631587573}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6416209615785311620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3691867006897480538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656948644631587573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03034a09fa944f249c6a335e09839dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityAcceleration: -1
 --- !u!1 &8814520844079566017
 GameObject:
   m_ObjectHideFlags: 0
