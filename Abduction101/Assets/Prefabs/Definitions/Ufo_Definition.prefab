@@ -49,7 +49,7 @@ MonoBehaviour:
     distanceType: 1
     range:
       Min: 0
-      Max: 0.2
+      Max: 0.3
     playerAllianceType: 1
     aliveType: 2
     angle:

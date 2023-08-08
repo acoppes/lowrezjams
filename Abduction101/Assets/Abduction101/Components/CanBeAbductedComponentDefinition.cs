@@ -4,7 +4,8 @@ namespace Abduction101.Components
 {
     public struct CanBeAbductedComponent : IEntityComponent
     {
-        public bool isBeingAbducted;
+        public int abductedTimeout;
+        public bool isBeingAbducted => abductedTimeout > 0;
         public float abductionSpeed;
         public float abductionForce;
     }

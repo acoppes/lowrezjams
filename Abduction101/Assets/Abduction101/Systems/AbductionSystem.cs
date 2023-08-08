@@ -41,7 +41,7 @@ namespace Abduction101.Systems
 
                 lookingDirection.value = Vector2.right.Rotate(abductionAngle * Mathf.Deg2Rad);
 
-                canBeAbducted.isBeingAbducted = false;
+                canBeAbducted.abductedTimeout--;
             }
             
             foreach (var e in physicsFilter.Value)
@@ -58,7 +58,7 @@ namespace Abduction101.Systems
                 physics.body.AddForce(UnityEngine.Vector3.up * canBeAbducted.abductionForce);
                 lookingDirection.value = Vector2.right.Rotate(abductionAngle * Mathf.Deg2Rad);
 
-                canBeAbducted.isBeingAbducted = false;
+                canBeAbducted.abductedTimeout--;
                 canBeAbducted.abductionForce = 0;
             }
         }

@@ -90,7 +90,7 @@ namespace Abduction101.Controllers
                         if (target.target.entity.Has<CanBeAbductedComponent>())
                         {
                             ref var abductedComponent = ref target.target.entity.Get<CanBeAbductedComponent>();
-                            abductedComponent.isBeingAbducted = true;
+                            abductedComponent.abductedTimeout = 2;
                             abductedComponent.abductionSpeed = 1;
                             abductedComponent.abductionForce += abductionForce;
                         }
