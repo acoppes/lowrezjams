@@ -42,13 +42,13 @@ Shader "Effects/TestImageEffect"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float fmod = modf(i.uv.y, 2.0);
-                float fstep = fmin + (1.0 - fmin) * fmod;
+                // float fmod = modf(i.uv.y, 2.0);
+                //float fstep = fmin + (1.0 - fmin) * fmod;
                 
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // just invert the colors
                 // col.rgb = 1 - col.rgb;
-                return col * fstep;
+                return col;
             }
             ENDCG
         }
