@@ -3583,7 +3583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerForce: 2000
-  abductionAngle: 23
+  abductionAngle: 60
 --- !u!1 &8542196370403035039
 GameObject:
   m_ObjectHideFlags: 0

@@ -602,7 +602,7 @@ MonoBehaviour:
     distanceType: 2
     range:
       Min: 0
-      Max: 0.5
+      Max: 0.4
     playerAllianceType: 1
     aliveType: 2
     angle:

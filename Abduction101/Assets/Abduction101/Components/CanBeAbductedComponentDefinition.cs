@@ -14,10 +14,14 @@ namespace Abduction101.Components
         public Vector3 center;
         public Vector3 horizontal;
         public Vector3 vertical;
+
+        public float angle;
     }
     
     public class CanBeAbductedComponentDefinition : ComponentDefinitionBase
     {
+        public float angle = 60;
+        
         public override string GetComponentName()
         {
             return nameof(CanBeAbductedComponent);
@@ -27,7 +31,8 @@ namespace Abduction101.Components
         {
             world.AddComponent(entity, new CanBeAbductedComponent()
             {
-                source = Entity.NullEntity
+                source = Entity.NullEntity,
+                angle = angle
             });
         }
     }

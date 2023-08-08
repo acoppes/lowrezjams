@@ -18,7 +18,6 @@ namespace Abduction101.Systems
         readonly EcsFilterInject<Inc<CanBeAbductedComponent, LookingDirection, PhysicsComponent>, Exc<DisabledComponent>> physicsFilter = default;
 
         public float centerForce = 1000;
-        public float abductionAngle = 23;
         
         public void Run(EcsSystems systems)
         {
@@ -56,7 +55,7 @@ namespace Abduction101.Systems
                 velocity.value = v;
                 position.value = p;
 
-                lookingDirection.value = Vector2.right.Rotate(abductionAngle * Mathf.Deg2Rad);
+                lookingDirection.value = Vector2.right.Rotate(canBeAbducted.angle * Mathf.Deg2Rad);
 
                 canBeAbducted.abductedTimeout--;
             }
@@ -76,7 +75,7 @@ namespace Abduction101.Systems
                 physics.body.AddForce(canBeAbducted.vertical * canBeAbducted.abductionForce);
                 physics.body.AddForce(canBeAbducted.horizontal * centerForce);
                 
-                lookingDirection.value = Vector2.right.Rotate(abductionAngle * Mathf.Deg2Rad);
+                lookingDirection.value = Vector2.right.Rotate(canBeAbducted.angle * Mathf.Deg2Rad);
 
                 canBeAbducted.abductedTimeout--;
                 canBeAbducted.abductionForce = 0;
