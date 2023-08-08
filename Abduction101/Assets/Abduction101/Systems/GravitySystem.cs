@@ -11,7 +11,8 @@ namespace Abduction101.Systems
     {
         public float gravityAcceleration = -9.81f;
         
-        readonly EcsFilterInject<Inc<PositionComponent, GravityComponent, VelocityComponent>, Exc<DisabledComponent>> filter = default;
+        readonly EcsFilterInject<Inc<PositionComponent, GravityComponent, VelocityComponent>, 
+            Exc<DisabledComponent, PhysicsComponent, Physics2dComponent>> filter = default;
         
         public void Run(EcsSystems systems)
         {

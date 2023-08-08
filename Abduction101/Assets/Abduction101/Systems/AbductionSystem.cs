@@ -1,4 +1,5 @@
 using Abduction101.Components;
+using Game.Components;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Utilities;
 using Leopotam.EcsLite;
@@ -11,6 +12,7 @@ namespace Abduction101.Systems
     public class AbductionSystem : BaseSystem, IEcsRunSystem
     {
         readonly EcsFilterInject<Inc<PositionComponent, CanBeAbductedComponent, LookingDirection, VelocityComponent>, Exc<DisabledComponent>> filter = default;
+        readonly EcsFilterInject<Inc<CanBeAbductedComponent, LookingDirection, PhysicsComponent>, Exc<DisabledComponent>> physicsFilter = default;
 
         public float abductionAngle = 23;
         
@@ -40,6 +42,24 @@ namespace Abduction101.Systems
                 lookingDirection.value = Vector2.right.Rotate(abductionAngle * Mathf.Deg2Rad);
 
                 canBeAbducted.isBeingAbducted = false;
+            }
+            
+            foreach (var e in physicsFilter.Value)
+            {
+                ref var canBeAbducted = ref physicsFilter.Pools.Inc1.Get(e);
+                ref var lookingDirection = ref physicsFilter.Pools.Inc2.Get(e);
+                ref var physics = ref physicsFilter.Pools.Inc3.Get(e);
+                
+                if (!canBeAbducted.isBeingAbducted)
+                {
+                    continue;
+                }
+                
+                physics.body.AddForce(UnityEngine.Vector3.up * canBeAbducted.abductionForce);
+                lookingDirection.value = Vector2.right.Rotate(abductionAngle * Mathf.Deg2Rad);
+
+                canBeAbducted.isBeingAbducted = false;
+                canBeAbducted.abductionForce = 0;
             }
         }
     }

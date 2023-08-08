@@ -62,6 +62,11 @@ namespace Abduction101.Controllers
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
 
+            if (entity.Has<PhysicsComponent>())
+            {
+                entity.Get<PhysicsComponent>().syncType = PhysicsComponent.SyncType.Both;
+            }
+            
             // ref var lookingDirection = ref entity.Get<LookingDirection>();
             // lookingDirection.value = Vector3.right;
         }

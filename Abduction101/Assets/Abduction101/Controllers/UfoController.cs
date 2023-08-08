@@ -13,6 +13,7 @@ namespace Abduction101.Controllers
     public class UfoController : ControllerBase, IUpdate, IInit
     {
         public float abductionSpeedMultiplier = 0.25f;
+        public float abductionForce = 100;
 
         public GameObject particlesPrefab;
         
@@ -90,6 +91,7 @@ namespace Abduction101.Controllers
                             ref var abductedComponent = ref target.target.entity.Get<CanBeAbductedComponent>();
                             abductedComponent.isBeingAbducted = true;
                             abductedComponent.abductionSpeed = 1;
+                            abductedComponent.abductionForce += abductionForce;
                         }
                     }
                 }

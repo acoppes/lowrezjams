@@ -6,6 +6,7 @@ namespace Abduction101.Components
     {
         public bool isBeingAbducted;
         public float abductionSpeed;
+        public float abductionForce;
     }
     
     public class CanBeAbductedComponentDefinition : ComponentDefinitionBase

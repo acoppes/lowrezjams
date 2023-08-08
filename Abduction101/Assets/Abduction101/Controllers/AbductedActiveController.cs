@@ -50,6 +50,11 @@ namespace Abduction101.Controllers
             model.rotation = ModelComponent.RotationType.Rotate;
 
             entity.Get<GravityComponent>().disabled = true;
+            
+            if (entity.Has<PhysicsComponent>())
+            {
+                entity.Get<PhysicsComponent>().syncType = PhysicsComponent.SyncType.FromPhysics;
+            }
         }
         
         private void StopAbduction(Entity entity)
