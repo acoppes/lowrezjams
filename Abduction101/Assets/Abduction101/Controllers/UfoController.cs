@@ -87,7 +87,7 @@ namespace Abduction101.Controllers
             
             if (abductAbility.isExecuting)
             {
-                // input.direction().vector2 = Vector2.zero;
+                // input.horizontal().vector2 = Vector2.zero;
                 movement.speed = movement.baseSpeed * abductionSpeedMultiplier;
                 
                 // update abduct effect position to my ground position...
@@ -105,6 +105,7 @@ namespace Abduction101.Controllers
                             abductedComponent.abductedTimeout = 2;
                             abductedComponent.abductionSpeed = 1;
                             abductedComponent.abductionForce += abductionForce;
+                            abductedComponent.source = entity;
                         }
                     }
                 }

@@ -1,4 +1,5 @@
 ﻿using Gemserk.Leopotam.Ecs;
+using UnityEngine;
 
 namespace Abduction101.Components
 {
@@ -8,6 +9,11 @@ namespace Abduction101.Components
         public bool isBeingAbducted => abductedTimeout > 0;
         public float abductionSpeed;
         public float abductionForce;
+
+        public Entity source;
+        public Vector3 center;
+        public Vector3 horizontal;
+        public Vector3 vertical;
     }
     
     public class CanBeAbductedComponentDefinition : ComponentDefinitionBase
@@ -19,7 +25,10 @@ namespace Abduction101.Components
 
         public override void Apply(World world, Entity entity)
         {
-            world.AddComponent(entity, new CanBeAbductedComponent());
+            world.AddComponent(entity, new CanBeAbductedComponent()
+            {
+                source = Entity.NullEntity
+            });
         }
     }
 }
