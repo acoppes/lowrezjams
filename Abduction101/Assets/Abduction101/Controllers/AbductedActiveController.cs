@@ -37,6 +37,7 @@ namespace Abduction101.Controllers
         {
             ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
+            ref var animations = ref entity.Get<AnimationComponent>();
             
             activeController.TakeControl(entity, this);
             
@@ -55,6 +56,8 @@ namespace Abduction101.Controllers
             {
                 entity.Get<PhysicsComponent>().syncType = PhysicsComponent.SyncType.FromPhysics;
             }
+            
+            animations.Play("Idle");
         }
         
         private void StopAbduction(Entity entity)
