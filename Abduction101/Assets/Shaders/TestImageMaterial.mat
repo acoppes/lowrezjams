@@ -62,26 +62,26 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _CRTBend: 5
+    - _CRTBend: 4
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Hardness: 0.55
-    - _LineWidth: 1.5
+    - _Hardness: 1.5
+    - _LineWidth: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0
+    - _Speed: 0.04
     - _SrcBlend: 1
     - _UVSec: 0
     - _VignetteEdge: 6
-    - _VignetteSize: 1.84
+    - _VignetteSize: 1.8
     - _VignetteSmoothness: 0.55
     - _ZWrite: 1
     m_Colors:
