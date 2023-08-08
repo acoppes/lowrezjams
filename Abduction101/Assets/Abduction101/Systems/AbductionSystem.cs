@@ -30,7 +30,7 @@ namespace Abduction101.Systems
                 if (canBeAbducted.isBeingAbducted && canBeAbducted.source.Exists())
                 {
                     canBeAbducted.center = canBeAbducted.source.Get<PositionComponent>().value;
-                    canBeAbducted.horizontal = canBeAbducted.center.XZ() - position.value.XZ();
+                    canBeAbducted.horizontal = (canBeAbducted.center - position.value).NoY();
                     canBeAbducted.vertical = (canBeAbducted.center - position.value).ToY();
                 }
             }
