@@ -60,6 +60,9 @@ namespace Abduction101.Controllers
                 
             states.EnterState("Wandering");
             states.EnterState("Wandering.Timeout", wanderTime.RandomInRange());
+            
+            ref var model = ref entity.Get<ModelComponent>();
+            model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
         }
         
         private void StopWandering(Entity entity)
