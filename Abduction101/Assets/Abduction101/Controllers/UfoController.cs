@@ -50,6 +50,7 @@ namespace Abduction101.Controllers
 
             var abilities = entity.Get<AbilitiesComponent>();
             var abductAbility = abilities.GetAbility("Abduct");
+            var consumeAbility = abilities.GetAbility("Consume");
 
             if (!abductAbility.isExecuting)
             {
@@ -92,6 +93,18 @@ namespace Abduction101.Controllers
                             abductedComponent.isBeingAbducted = true;
                             abductedComponent.abductionSpeed = 1;
                             abductedComponent.abductionForce += abductionForce;
+                        }
+                    }
+                }
+                
+                foreach (var target in consumeAbility.abilityTargets)
+                {
+                    if (target.valid && target.target.entity.Exists())
+                    {
+                        var e = target.target.entity;
+                        if (e.Has<DestroyableComponent>())
+                        {
+                            e.Get<DestroyableComponent>().destroy = true;
                         }
                     }
                 }

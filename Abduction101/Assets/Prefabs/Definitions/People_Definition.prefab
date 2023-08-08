@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 2385121975069266612}
   - component: {fileID: 8772718357143054107}
   - component: {fileID: 8866745561474543436}
-  - component: {fileID: 9155435506294389843}
+  - component: {fileID: 3250865073923929528}
   m_Layer: 0
   m_Name: People_Definition
   m_TagString: Untagged
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerObject: {fileID: 2354715123726118808}
-  sharedInstance: 1
+  sharedInstance: 0
   hasStateController: 1
 --- !u!114 &6091260107082324691
 MonoBehaviour:
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 2
---- !u!114 &9155435506294389843
+--- !u!114 &3250865073923929528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -361,9 +361,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 5156139759902819513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae998909e5fd4ce9af03b90f7e0548ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b2d7edd28434b1ba18bdd30d4d765bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  physicsComponentType: 0
+  shapeType: 3
+  size: {x: 0.1, y: 0.2, z: 0.1}
+  centerType: 0
+  center: {x: 0, y: 0, z: 0}
+  mass: 80
+  isStatic: 0
+  isTrigger: 0
+  defaultSyncType: 0
+  colliderType: 3
 --- !u!1 &5921691204201231206
 GameObject:
   m_ObjectHideFlags: 0
