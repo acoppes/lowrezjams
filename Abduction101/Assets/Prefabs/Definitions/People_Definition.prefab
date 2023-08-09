@@ -64,6 +64,8 @@ GameObject:
   - component: {fileID: 8866745561474543436}
   - component: {fileID: 3250865073923929528}
   - component: {fileID: 7465229425414162111}
+  - component: {fileID: -1412937582195535995}
+  - component: {fileID: -4153327166685557971}
   m_Layer: 0
   m_Name: People_Definition
   m_TagString: Untagged
@@ -308,9 +310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca57faa7304bf2848a5d81649027d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 1.5
   invulnerabilityTime: 0
-  autoDestroyOnDeath: 0
+  autoDestroyOnDeath: 1
   autoDisableOnDeath: 0
   hasHealthBar: 0
   healthBarOffset: {x: 0, y: 0, z: 0}
@@ -389,6 +391,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d485697899470eb717e870d72b898f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minHeightForDamage: 0.1
+--- !u!114 &-1412937582195535995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156139759902819513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b270f280f046239f9db195e4cb4d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamageEffects:
+  - positionType: 0
+    randomOffsetType: 1
+    attachPoint: 
+    range: 0.1
+    definition: {fileID: 7807718640421459040, guid: 56ad46d5f42353c46992fc375b550359, type: 3}
+  onDeathEffects:
+  - positionType: 0
+    randomOffsetType: 1
+    attachPoint: 
+    range: 0.1
+    definition: {fileID: 4513131719829850727, guid: d98ce3dc4a231604cbd081c97ea8a850, type: 3}
+--- !u!114 &-4153327166685557971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156139759902819513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d18edad1f74c679538b2f8099a84fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachPointDefinitions: []
 --- !u!1 &5921691204201231206
 GameObject:
   m_ObjectHideFlags: 0

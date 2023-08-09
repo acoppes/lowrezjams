@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   invulnerabilityTime: 0
-  autoDestroyOnDeath: 0
+  autoDestroyOnDeath: 1
   autoDisableOnDeath: 0
   hasHealthBar: 0
   healthBarOffset: {x: 0, y: 0, z: 0}
@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d485697899470eb717e870d72b898f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minHeightForDamage: 0.1
 --- !u!1 &5921691204201231206
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,15 @@ namespace Abduction101.Controllers
                 if (gravity.inContactWithGround)
                 {
                     fall.height = fall.yPositionOnStart - entity.Get<PositionComponent>().value.y;
+                    
+                    if (fall.height > fall.minHeightForDamage)
+                    {
+                        entity.Get<HealthComponent>().damages.Add(new DamageData()
+                        {
+                            value = fall.height
+                        });
+                    }
+                    
                     StopFalling(entity);
                 }
                 
@@ -58,7 +67,9 @@ namespace Abduction101.Controllers
                 entity.Get<PhysicsComponent>().syncType = PhysicsComponent.SyncType.FromPhysics;
             }
 
-            entity.Get<FallStateComponent>().yPositionOnStart = entity.Get<PositionComponent>().value.y;
+            ref var fall = ref entity.Get<FallStateComponent>();
+            fall.yPositionOnStart = entity.Get<PositionComponent>().value.y;
+            fall.falling = true;
         }
         
         private void StopFalling(Entity entity)
@@ -79,6 +90,9 @@ namespace Abduction101.Controllers
             
             // ref var lookingDirection = ref entity.Get<LookingDirection>();
             // lookingDirection.value = Vector3.right;
+            
+            ref var fall = ref entity.Get<FallStateComponent>();
+            fall.falling = true;
         }
 
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)

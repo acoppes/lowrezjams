@@ -6,10 +6,14 @@ namespace Abduction101.Components
     {
         public float yPositionOnStart;
         public float height;
+        public bool falling;
+        public float minHeightForDamage;
     }
     
     public class FallStateComponentDefinition : ComponentDefinitionBase
     {
+        public float minHeightForDamage = 0.1f;
+        
         public override string GetComponentName()
         {
             return nameof(FallStateComponent);
@@ -17,7 +21,10 @@ namespace Abduction101.Components
 
         public override void Apply(World world, Entity entity)
         {
-            world.AddComponent(entity, new FallStateComponent());
+            world.AddComponent(entity, new FallStateComponent()
+            {
+                minHeightForDamage = minHeightForDamage
+            });
         }
     }
 }
