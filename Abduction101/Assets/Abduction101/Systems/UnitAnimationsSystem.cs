@@ -10,7 +10,9 @@ namespace Abduction101.Systems
     {
         readonly EcsFilterInject<Inc<MovementComponent, AnimationComponent>, Exc<DisabledComponent>> animationFilter = default;
         readonly EcsFilterInject<Inc<MovementComponent, LookingDirection>, Exc<DisabledComponent>> lookingDirectionFilter = default;
-        readonly EcsFilterInject<Inc<ActiveControllerComponent, AnimationComponent, MovementComponent>, Exc<DisabledComponent>> abilitiesFilter = default;
+        
+        readonly EcsFilterInject<Inc<ActiveControllerComponent, AnimationComponent, MovementComponent>, Exc<DisabledComponent>> activeControllerFilter = default;
+        readonly EcsFilterInject<Inc<AnimationComponent, MovementComponent>, Exc<DisabledComponent, ActiveControllerComponent>> notActiveControllerFilter = default;
 
         public void Run(EcsSystems systems)
         {
@@ -43,34 +45,39 @@ namespace Abduction101.Systems
                 }
             }
             
-            foreach (var entity in abilitiesFilter.Value)
+            foreach (var entity in activeControllerFilter.Value)
             {
-                ref var activeController = ref abilitiesFilter.Pools.Inc1.Get(entity);
-                ref var animations = ref abilitiesFilter.Pools.Inc2.Get(entity);
-                ref var movement = ref abilitiesFilter.Pools.Inc3.Get(entity);
+                ref var activeController = ref activeControllerFilter.Pools.Inc1.Get(entity);
+                ref var animations = ref activeControllerFilter.Pools.Inc2.Get(entity);
+                ref var movement = ref activeControllerFilter.Pools.Inc3.Get(entity);
 
                 if (movement.isMoving)
                 {
                     continue;
                 }
                 
-                // var executingAbility = !activeController.IsControlled();
-                
-                // foreach (var ability in abilities.abilities)
-                // {
-                //     if (ability.isExecuting)
-                //     {
-                //         executingAbility = true;
-                //         break;
-                //     }    
-                // }
-
                 if (!activeController.IsControlled())
                 {
                     if (!animations.IsPlaying("Idle"))
                     {
                         animations.Play("Idle");
                     }
+                }
+            }
+            
+            foreach (var entity in notActiveControllerFilter.Value)
+            {
+                ref var animations = ref notActiveControllerFilter.Pools.Inc1.Get(entity);
+                ref var movement = ref notActiveControllerFilter.Pools.Inc2.Get(entity);
+
+                if (movement.isMoving)
+                {
+                    continue;
+                }
+              
+                if (!animations.IsPlaying("Idle"))
+                {
+                    animations.Play("Idle");
                 }
             }
         }

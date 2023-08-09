@@ -12,22 +12,6 @@ namespace Abduction101.Systems
     {
         readonly EcsFilterInject<Inc<ModelComponent, ColorSetComponent>, Exc<DisabledComponent>> filter = default;
         
-        // public void OnEntityCreated(World world, Entity entity)
-        // {
-        //     if (entity.Has<ColorSetComponent>() && entity.Has<ModelComponent>())
-        //     {
-        //         // return model to original setting
-        //         ref var model = ref entity.Get<ModelComponent>()
-        //         ref var colorSet = ref filter.Pools.Inc2.Get(e);
-        //
-        //         if (colorSet.lutTexture == null)
-        //         {
-        //             
-        //         }
-        //         
-        //     }
-        // }
-        
         public void OnEntityDestroyed(World world, Entity entity)
         {
             if (entity.Has<ColorSetComponent>() && entity.Has<ModelComponent>())
@@ -41,11 +25,6 @@ namespace Abduction101.Systems
                     Destroy(colorSet.lutTexture);
                     colorSet.lutTexture = null;
                 }
-
-                // if (model.instance != null)
-                // {
-                //     model.instance.spriteRenderer.sharedMaterial = 
-                // }
             }
         }
         
@@ -84,8 +63,5 @@ namespace Abduction101.Systems
                 }
             }
         }
-
-
-
     }
 }
