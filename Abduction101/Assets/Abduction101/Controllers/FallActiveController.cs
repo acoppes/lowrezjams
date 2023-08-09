@@ -1,4 +1,5 @@
-﻿using Game.Components;
+﻿using Abduction101.Components;
+using Game.Components;
 using Game.Controllers;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Components;
@@ -17,11 +18,13 @@ namespace Abduction101.Controllers
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             var position = entity.Get<PositionComponent>();
             var gravity = entity.Get<GravityComponent>();
+            ref var fall = ref entity.Get<FallStateComponent>();
             
             if (states.HasState("Falling"))
             {
                 if (gravity.inContactWithGround)
                 {
+                    fall.height = fall.yPositionOnStart - entity.Get<PositionComponent>().value.y;
                     StopFalling(entity);
                 }
                 
@@ -49,6 +52,13 @@ namespace Abduction101.Controllers
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.Rotate;
+            
+            if (entity.Has<PhysicsComponent>())
+            {
+                entity.Get<PhysicsComponent>().syncType = PhysicsComponent.SyncType.FromPhysics;
+            }
+
+            entity.Get<FallStateComponent>().yPositionOnStart = entity.Get<PositionComponent>().value.y;
         }
         
         private void StopFalling(Entity entity)
