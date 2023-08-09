@@ -509,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9070944182295245045, guid: 472b322571bacb34689fbcf7a3a351a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.75
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 9070944182295245045, guid: 472b322571bacb34689fbcf7a3a351a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2377,7 +2377,7 @@ MonoBehaviour:
   m_ZDamping: 20
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.87
+  m_ScreenY: 0.75
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
