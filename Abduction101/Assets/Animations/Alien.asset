@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43476aec9d91461b89f0964aa65efc4e, type: 3}
+  m_Name: Alien
+  m_EditorClassIdentifier: 
+  sourceFolder: Assets/Sprites/Abduction101/Alien
+  animations:
+  - name: Idle
+    frames:
+    - sprite: {fileID: 21300000, guid: fd5bdc7a148610046a27a11ab354e592, type: 3}
+      time: 0.06666667
+  - name: Walk
+    frames:
+    - sprite: {fileID: 21300000, guid: e3283167d42085c41b96af64f574d672, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 3e52479fbf6e5324d986079d0a33d205, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: eb4849f3ee73c3742ac1ec61539f6983, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 97a4fa00e8a20c84ab17653fb763bacc, type: 3}
+      time: 0.06666667

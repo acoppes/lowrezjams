@@ -73,11 +73,13 @@ namespace Abduction101.Controllers
 
                     abductEffect = world.CreateEntity(abductEffectDefinition);
                     particles.Play();
-                    
+
+                    abductEffect.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
+
                     // abductEffect.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
                     // particles.transform.position =
                     //     GamePerspective.ConvertFromWorld(new Vector3(position.value.x, 0, position.value.z));
-                    
+
                     // spawn definition etc
                     // return;
                 }
