@@ -3269,7 +3269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a56697002c4d138a9cf345f71ec9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxDefaultPrefab: {fileID: 804873498530741591, guid: 5fbfacbbe93de4d4e870eaf47484a305, type: 3}
+  sfxDefaultPrefab: {fileID: 804873498530741591, guid: cb64797d6bbc42c46bf5db71eefc62bf, type: 3}
 --- !u!1 &7178519557867280283
 GameObject:
   m_ObjectHideFlags: 0

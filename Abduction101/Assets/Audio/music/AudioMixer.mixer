@@ -19,6 +19,39 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-7608706993441894982
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5efbb6e8089969346ba0ef11c9c7b235
+  m_EffectName: Attenuation
+  m_MixLevel: 6167d63736aeb4d42bb0c1a61a39d921
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-3484722001188431956
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sfx
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: fa58def1792933f448e5215f68918c00
+  m_Children: []
+  m_Volume: 225616b0a31fcf548b70b71bdd2639f6
+  m_Pitch: 05de24240fe02634e97ed6cd356a6756
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7608706993441894982}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -39,6 +72,7 @@ AudioMixerController:
   - guids:
     - 346743d415c45e245b2fe619737210e6
     - a3a5ee8b29812114c98a7d72952a6a39
+    - fa58def1792933f448e5215f68918c00
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -53,6 +87,7 @@ AudioMixerGroupController:
   m_GroupID: 346743d415c45e245b2fe619737210e6
   m_Children:
   - {fileID: -9027166038655773916}
+  - {fileID: -3484722001188431956}
   m_Volume: 5ba666b4e85e919459a710fc6ac608af
   m_Pitch: 59ad3f92279a38c4c832c6aa61f80004
   m_Send: 00000000000000000000000000000000

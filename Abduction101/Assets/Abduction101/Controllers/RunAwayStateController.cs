@@ -15,6 +15,8 @@ namespace Abduction101.Controllers
     public class RunAwayStateController : ControllerBase, IUpdate, IActiveController
     {
         // public MinMaxFloat distance;
+
+        public Object sfxDefinition;
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
@@ -46,13 +48,13 @@ namespace Abduction101.Controllers
             {
                 if (activeController.CanInterrupt(entity, this))
                 {
-                    StartRunAway(entity);
+                    StartRunAway(world, entity);
                 }
             }
             
         }
 
-        private void StartRunAway(Entity entity)
+        private void StartRunAway(World world, Entity entity)
         {
             ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
@@ -79,6 +81,12 @@ namespace Abduction101.Controllers
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
+
+            if (sfxDefinition != null)
+            {
+                var sfxEntity = world.CreateEntity(sfxDefinition);
+                sfxEntity.Get<PositionComponent>().value = entity.Get<PositionComponent>().value;
+            }
         }
         
         private void StopRunAway(Entity entity)
