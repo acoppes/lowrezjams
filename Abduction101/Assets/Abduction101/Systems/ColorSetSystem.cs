@@ -74,7 +74,11 @@ namespace Abduction101.Systems
                     
                     colorSet.materialPropertyBlock = new MaterialPropertyBlock();
                     model.instance.spriteRenderer.GetPropertyBlock(colorSet.materialPropertyBlock, 0);
-                    // colorSet.materialPropertyBlock.SetTexture("_MainTex", model.instance.spriteRenderer.sprite.texture);
+                    if (model.instance.spriteRenderer.sprite != null)
+                    {
+                        colorSet.materialPropertyBlock.SetTexture("_MainTex",
+                            model.instance.spriteRenderer.sprite.texture);
+                    }
                     colorSet.materialPropertyBlock.SetTexture("_LutTex", colorSet.lutTexture);
                     model.instance.spriteRenderer.SetPropertyBlock(colorSet.materialPropertyBlock);
                 }

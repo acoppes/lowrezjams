@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: -1412937582195535995}
   - component: {fileID: -4153327166685557971}
   - component: {fileID: 3271986580231453444}
+  - component: {fileID: 5903747125821193199}
   m_Layer: 0
   m_Name: People_Definition
   m_TagString: Untagged
@@ -445,6 +446,18 @@ MonoBehaviour:
   hair: {fileID: 11400000, guid: 7d977d76fc744d041ad9927276bd130e, type: 2}
   skin: {fileID: 11400000, guid: d7a25980b9cc99d449ded3a2ea307566, type: 2}
   body: {fileID: 11400000, guid: dfd167f41acaa8741be02408cac9e158, type: 2}
+--- !u!114 &5903747125821193199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156139759902819513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40049d4fd6346e2b82285e47ad5e3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5921691204201231206
 GameObject:
   m_ObjectHideFlags: 0
