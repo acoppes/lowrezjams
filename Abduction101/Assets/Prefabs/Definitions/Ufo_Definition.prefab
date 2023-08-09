@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minZ: -0.5
-  maxZ: 0.5
+  maxZ: 1.5
 --- !u!114 &1127852944328088735
 MonoBehaviour:
   m_ObjectHideFlags: 0
