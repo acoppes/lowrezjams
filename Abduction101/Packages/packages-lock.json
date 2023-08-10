@@ -127,7 +127,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "40cb61e861c7221c5cfb7b8cbb30519c565c5d2f"
     },
     "com.leoecscommunity.ecslite": {
       "version": "1.0.0",

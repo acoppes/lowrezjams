@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productName: Abduction101
   version: 0.0.1
-  defaultWebScreenWidth: 256
-  defaultWebScreenHeight: 256
+  defaultWebScreenWidth: 512
+  defaultWebScreenHeight: 512
   sceneAssets:
   - {fileID: 102900000, guid: 1c85f952c6cad034885a1fa887e26830, type: 3}
   - {fileID: 102900000, guid: de48c3cf2003b334eb542c9ad7ccc6aa, type: 3}
