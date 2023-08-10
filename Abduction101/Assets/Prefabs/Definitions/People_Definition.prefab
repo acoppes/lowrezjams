@@ -612,6 +612,11 @@ MonoBehaviour:
     attachPoint: 
     range: 0.1
     definition: {fileID: 4513131719829850727, guid: d98ce3dc4a231604cbd081c97ea8a850, type: 3}
+  - positionType: 1
+    randomOffsetType: 0
+    attachPoint: hit
+    range: 0.1
+    definition: {fileID: 7807718640421459040, guid: 6f71e472e35dafb4983ecb5878c7ecef, type: 3}
 --- !u!114 &-4153327166685557971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,7 +629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d18edad1f74c679538b2f8099a84fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachPointDefinitions: []
+  attachPointDefinitions:
+  - name: hit
+    position: {x: 0, y: 0.1, z: 0}
 --- !u!114 &3271986580231453444
 MonoBehaviour:
   m_ObjectHideFlags: 0

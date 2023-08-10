@@ -59,7 +59,12 @@ namespace Abduction101.Controllers
                     var e = target.target.entity;
                     if (e.Has<DestroyableComponent>())
                     {
-                        e.Get<DestroyableComponent>().destroy = true;
+                        e.Get<HealthComponent>().damages.Add(new DamageData()
+                        {
+                            position = target.position,
+                            value = 1000,
+                            source = entity
+                        });
                     }
                 }
             }
