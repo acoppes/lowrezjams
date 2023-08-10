@@ -3107,6 +3107,7 @@ Transform:
   - {fileID: 864763914}
   - {fileID: 1103671792}
   - {fileID: 1683278601}
+  - {fileID: 1376894126}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958802988
@@ -4235,10 +4236,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -10, y: 5}
-      - {x: -10, y: -1.35}
-      - {x: 10, y: -1.35}
-      - {x: 10, y: 5}
+    - - {x: -5000, y: 5}
+      - {x: -5000, y: -1.35}
+      - {x: 5000, y: -1.35}
+      - {x: 5000, y: 5}
   m_UseDelaunayMesh: 0
 --- !u!4 &1376894126
 Transform:
@@ -4253,7 +4254,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 955860894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1381277529
 GameObject:
@@ -6581,4 +6582,3 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 955860894}
-  - {fileID: 1376894126}
