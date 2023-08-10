@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Abduction101.Controllers
 {
-    public class PeopleController : ControllerBase, IUpdate, IActiveController
+    public class WanderStateController : ControllerBase, IUpdate, IActiveController
     {
         public MinMaxFloat wanderTime;
         public MinMaxFloat idleTime;
@@ -24,12 +24,21 @@ namespace Abduction101.Controllers
                 ref var movement = ref entity.Get<MovementComponent>();
                 ref var input = ref entity.Get<InputComponent>();
                 
-                movement.movingDirection = input.direction3d();
-                
                 if (!states.HasState("Wandering.Timeout"))
                 {
                     StopWandering(entity);
                 }
+                else
+                {
+                    if (movement.stationaryTime > 0.1f)
+                    {
+                        var randomDirection = UnityEngine.Random.insideUnitCircle;
+                        input.direction().vector2 = randomDirection;
+                    }
+                }
+                
+                movement.movingDirection = input.direction3d();
+                
                 return;
             }
             
