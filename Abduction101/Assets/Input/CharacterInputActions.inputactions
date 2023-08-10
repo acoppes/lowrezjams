@@ -103,6 +103,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7c3e6e3b-76fc-4faa-b3e0-546e71eaf9f5",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Button2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8d52a881-e754-424f-8619-ef4062e1709d",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -295,6 +306,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Button1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad9af9ef-a774-4255-8c48-69e7d02ac739",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
                     "action": "Button1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -552,6 +574,11 @@
                 {
                     "devicePath": "<Keyboard>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
