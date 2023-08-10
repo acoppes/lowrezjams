@@ -18,7 +18,7 @@ namespace Abduction101.Components
         public float angle;
     }
     
-    public class CanBeAbductedComponentDefinition : ComponentDefinitionBase
+    public class AbductionComponentDefinition : ComponentDefinitionBase
     {
         public float angle = 60;
         
