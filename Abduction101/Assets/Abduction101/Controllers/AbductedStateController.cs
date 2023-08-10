@@ -43,9 +43,12 @@ namespace Abduction101.Controllers
             
             activeController.TakeControl(entity, this);
             
-            ref var movement = ref entity.Get<MovementComponent>();
-            movement.speed = 0;
-            movement.movingDirection = Vector3.zero;
+            if (entity.Has<MovementComponent>())
+            {
+                ref var movement = ref entity.Get<MovementComponent>();
+                movement.speed = 0;
+                movement.movingDirection = Vector3.zero;
+            }
             
             states.EnterState("IsBeingAbducted");
             
