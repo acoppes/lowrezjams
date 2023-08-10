@@ -3815,7 +3815,7 @@ PrefabInstance:
     - target: {fileID: 9070944182295244809, guid: 472b322571bacb34689fbcf7a3a351a7, type: 3}
       propertyPath: entityDefinition
       value: 
-      objectReference: {fileID: 5156139759902819513, guid: 5aa480cb85c66d442b4cb96b7bd8059b, type: 3}
+      objectReference: {fileID: 4146935797480305706, guid: 5aa480cb85c66d442b4cb96b7bd8059b, type: 3}
     - target: {fileID: 9070944182295245042, guid: 472b322571bacb34689fbcf7a3a351a7, type: 3}
       propertyPath: m_Name
       value: Spawn(SchoolBus)
