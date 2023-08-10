@@ -112,12 +112,12 @@ namespace Abduction101.Controllers
         
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)
         {
-            if (activeController is FallActiveController)
+            if (activeController is FallStateController)
             {
                 return true;
             }
 
-            if (activeController is AbductedActiveController)
+            if (activeController is AbductedStateController)
             {
                 return true;
             }

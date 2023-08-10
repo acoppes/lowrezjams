@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 4577540081562124511}
   - component: {fileID: -6287494419206683084}
   - component: {fileID: 1245043615581047365}
+  - component: {fileID: 3662497728978996283}
   m_Layer: 0
   m_Name: AbductionEffect_Definition
   m_TagString: Untagged
@@ -223,3 +224,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40049d4fd6346e2b82285e47ad5e3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3662497728978996283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6331399880278644861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99954465c2014750bcdae15766be78f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 1037ccb1fefa5ec46b6b3ca4174e40e2, type: 3}
+  prefab: {fileID: 0}
+  autoDestroyOnComplete: 0
+  volume: 0.75
+  loop: 1

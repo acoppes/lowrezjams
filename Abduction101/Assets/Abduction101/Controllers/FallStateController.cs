@@ -9,8 +9,10 @@ using UnityEngine;
 
 namespace Abduction101.Controllers
 {
-    public class FallActiveController : ControllerBase, IUpdate, IActiveController
+    public class FallStateController : ControllerBase, IUpdate, IActiveController
     {
+        public Object groundHitSfxDefinition;
+        
         public void OnUpdate(World world, Entity entity, float dt)
         {
             ref var states = ref entity.Get<StatesComponent>();
@@ -32,6 +34,12 @@ namespace Abduction101.Controllers
                         {
                             value = fall.height
                         });
+                        
+                        if (groundHitSfxDefinition != null)
+                        {
+                            var sfxEntity = world.CreateEntity(groundHitSfxDefinition);
+                            sfxEntity.Get<PositionComponent>().value = entity.Get<PositionComponent>().value;
+                        }
                     }
                     
                     StopFalling(entity);
@@ -97,7 +105,7 @@ namespace Abduction101.Controllers
 
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)
         {
-            if (activeController is AbductedActiveController)
+            if (activeController is AbductedStateController)
             {
                 return true;
             }

@@ -9,8 +9,10 @@ using UnityEngine;
 
 namespace Abduction101.Controllers
 {
-    public class AbductedActiveController : ControllerBase, IUpdate, IActiveController
+    public class AbductedStateController : ControllerBase, IUpdate, IActiveController
     {
+        public Object sfxDefinition;
+        
         public void OnUpdate(World world, Entity entity, float dt)
         {
             ref var states = ref entity.Get<StatesComponent>();
@@ -29,11 +31,11 @@ namespace Abduction101.Controllers
             
             if (canBeAbducted.isBeingAbducted && activeController.CanInterrupt(entity, this))
             {
-                StartAbduction(entity);
+                StartAbduction(world, entity);
             }
         }
 
-        private void StartAbduction(Entity entity)
+        private void StartAbduction(World world, Entity entity)
         {
             ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
@@ -58,6 +60,12 @@ namespace Abduction101.Controllers
             }
             
             animations.Play("Idle");
+            
+            if (sfxDefinition != null)
+            {
+                var sfxEntity = world.CreateEntity(sfxDefinition);
+                sfxEntity.Get<PositionComponent>().value = entity.Get<PositionComponent>().value;
+            }
         }
         
         private void StopAbduction(Entity entity)
