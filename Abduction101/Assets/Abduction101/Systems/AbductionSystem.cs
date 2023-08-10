@@ -13,11 +13,13 @@ namespace Abduction101.Systems
 {
     public class AbductionSystem : BaseSystem, IEcsRunSystem
     {
-        readonly EcsFilterInject<Inc<PositionComponent, CanBeAbductedComponent>, Exc<DisabledComponent>> abductionFilter = default;
-        readonly EcsFilterInject<Inc<PositionComponent, CanBeAbductedComponent, LookingDirection, VelocityComponent>, Exc<DisabledComponent>> filter = default;
-        readonly EcsFilterInject<Inc<CanBeAbductedComponent, LookingDirection, PhysicsComponent>, Exc<DisabledComponent>> physicsFilter = default;
+        readonly EcsFilterInject<Inc<PositionComponent, AbductionComponent>, Exc<DisabledComponent>> abductionFilter = default;
+        readonly EcsFilterInject<Inc<PositionComponent, AbductionComponent, LookingDirection, VelocityComponent>, Exc<DisabledComponent>> filter = default;
+        readonly EcsFilterInject<Inc<AbductionComponent, LookingDirection, PhysicsComponent>, Exc<DisabledComponent>> physicsFilter = default;
 
         public float centerForce = 1000;
+        public float rotationSpeed = 1;
+        public bool resetSpeedOnStartAbduction = true;
         
         public void Run(EcsSystems systems)
         {
@@ -37,17 +39,17 @@ namespace Abduction101.Systems
             foreach (var e in filter.Value)
             {
                 ref var position = ref filter.Pools.Inc1.Get(e);
-                ref var canBeAbducted = ref filter.Pools.Inc2.Get(e);
+                ref var abduction = ref filter.Pools.Inc2.Get(e);
                 ref var lookingDirection = ref filter.Pools.Inc3.Get(e);
                 ref var velocity = ref filter.Pools.Inc4.Get(e);
 
-                if (!canBeAbducted.isBeingAbducted)
+                if (!abduction.isBeingAbducted)
                 {
                     continue;
                 }
 
                 var v = velocity.value;
-                v.y = canBeAbducted.abductionSpeed;
+                v.y = abduction.abductionSpeed;
                 
                 var p = position.value;
                 p.y += v.y * dt;
@@ -55,30 +57,49 @@ namespace Abduction101.Systems
                 velocity.value = v;
                 position.value = p;
 
-                lookingDirection.value = Vector2.right.Rotate(canBeAbducted.angle * Mathf.Deg2Rad);
+                lookingDirection.value = Vector2.right.Rotate(abduction.targetAngle * Mathf.Deg2Rad);
 
-                canBeAbducted.abductedTimeout--;
+                abduction.abductedTimeout--;
             }
             
             foreach (var e in physicsFilter.Value)
             {
-                ref var canBeAbducted = ref physicsFilter.Pools.Inc1.Get(e);
+                ref var abduction = ref physicsFilter.Pools.Inc1.Get(e);
                 ref var lookingDirection = ref physicsFilter.Pools.Inc2.Get(e);
                 ref var physics = ref physicsFilter.Pools.Inc3.Get(e);
                 
-                if (!canBeAbducted.isBeingAbducted)
+                if (!abduction.isBeingAbducted)
                 {
-                    canBeAbducted.source = Entity.NullEntity;
+                    abduction.source = Entity.NullEntity;
+                    abduction.wasBeingAbducted = abduction.isBeingAbducted;
                     continue;
                 }
-                
-                physics.body.AddForce(canBeAbducted.vertical * canBeAbducted.abductionForce);
-                physics.body.AddForce(canBeAbducted.horizontal * centerForce);
-                
-                lookingDirection.value = Vector2.right.Rotate(canBeAbducted.angle * Mathf.Deg2Rad);
 
-                canBeAbducted.abductedTimeout--;
-                canBeAbducted.abductionForce = 0;
+                if (resetSpeedOnStartAbduction)
+                {
+                    if (!abduction.wasBeingAbducted && abduction.isBeingAbducted)
+                    {
+                        physics.body.velocity = UnityEngine.Vector3.zero;
+                    }
+                }
+                
+                physics.body.AddForce(abduction.vertical * abduction.abductionForce);
+                physics.body.AddForce(abduction.horizontal * centerForce);
+                
+                var angleDirection = abduction.targetAngle - abduction.currentAngle;
+                var nextAngle = abduction.currentAngle + angleDirection * rotationSpeed * dt;
+                if (nextAngle > abduction.targetAngle)
+                {
+                    nextAngle = abduction.targetAngle;
+                }
+                abduction.currentAngle = nextAngle;
+                
+                lookingDirection.value = Vector2.right.Rotate(abduction.currentAngle * Mathf.Deg2Rad);
+
+                abduction.abductedTimeout--;
+                abduction.abductionForce = 0;
+                
+                abduction.wasBeingAbducted = abduction.isBeingAbducted;
             }
         }
     }

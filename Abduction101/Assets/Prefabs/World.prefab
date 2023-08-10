@@ -3720,6 +3720,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerForce: 2000
+  rotationSpeed: 1.5
+  resetSpeedOnStartAbduction: 1
 --- !u!1 &8542196370403035039
 GameObject:
   m_ObjectHideFlags: 0

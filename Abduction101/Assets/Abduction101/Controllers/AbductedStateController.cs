@@ -16,12 +16,12 @@ namespace Abduction101.Controllers
         public void OnUpdate(World world, Entity entity, float dt)
         {
             ref var states = ref entity.Get<StatesComponent>();
-            ref var canBeAbducted = ref entity.Get<CanBeAbductedComponent>();
+            ref var abduction = ref entity.Get<AbductionComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             if (states.HasState("IsBeingAbducted"))
             {
-                if (!canBeAbducted.isBeingAbducted)
+                if (!abduction.isBeingAbducted)
                 {
                     StopAbduction(entity);
                 }
@@ -29,7 +29,7 @@ namespace Abduction101.Controllers
                 return;
             }
             
-            if (canBeAbducted.isBeingAbducted && activeController.CanInterrupt(entity, this))
+            if (abduction.isBeingAbducted && activeController.CanInterrupt(entity, this))
             {
                 StartAbduction(world, entity);
             }
@@ -40,8 +40,11 @@ namespace Abduction101.Controllers
             ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var animations = ref entity.Get<AnimationComponent>();
+            ref var abduction = ref entity.Get<AbductionComponent>();
             
             activeController.TakeControl(entity, this);
+
+            abduction.currentAngle = 0;
             
             if (entity.Has<MovementComponent>())
             {

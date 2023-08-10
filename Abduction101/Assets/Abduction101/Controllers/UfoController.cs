@@ -106,9 +106,9 @@ namespace Abduction101.Controllers
                 {
                     if (target.valid && target.target.entity.Exists())
                     {
-                        if (target.target.entity.Has<CanBeAbductedComponent>())
+                        if (target.target.entity.Has<AbductionComponent>())
                         {
-                            ref var abductedComponent = ref target.target.entity.Get<CanBeAbductedComponent>();
+                            ref var abductedComponent = ref target.target.entity.Get<AbductionComponent>();
                             abductedComponent.abductedTimeout = 2;
                             abductedComponent.abductionSpeed = 1;
                             abductedComponent.abductionForce += abductionForce;

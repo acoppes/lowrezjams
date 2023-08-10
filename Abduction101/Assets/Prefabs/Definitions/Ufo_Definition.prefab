@@ -379,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 3
   constraints: 0
+  initialSpeedType: 0
 --- !u!114 &8764308355890569847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abductionSpeedMultiplier: 0.5
-  abductionForce: 100
+  abductionForce: 60
   particlesPrefab: {fileID: 8084698804474018931, guid: 2298a1348f1217142a34c00099b452df, type: 3}
   abductEffectDefinition: {fileID: 6331399880278644861, guid: 31185e82f34ac9946a0bd34ab235dce2, type: 3}
 --- !u!1 &7690907909632291922

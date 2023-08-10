@@ -3,10 +3,12 @@ using UnityEngine;
 
 namespace Abduction101.Components
 {
-    public struct CanBeAbductedComponent : IEntityComponent
+    public struct AbductionComponent : IEntityComponent
     {
         public int abductedTimeout;
         public bool isBeingAbducted => abductedTimeout > 0;
+        public bool wasBeingAbducted;
+        
         public float abductionSpeed;
         public float abductionForce;
 
@@ -15,7 +17,8 @@ namespace Abduction101.Components
         public Vector3 horizontal;
         public Vector3 vertical;
 
-        public float angle;
+        public float targetAngle;
+        public float currentAngle;
     }
     
     public class AbductionComponentDefinition : ComponentDefinitionBase
@@ -24,15 +27,15 @@ namespace Abduction101.Components
         
         public override string GetComponentName()
         {
-            return nameof(CanBeAbductedComponent);
+            return nameof(AbductionComponent);
         }
 
         public override void Apply(World world, Entity entity)
         {
-            world.AddComponent(entity, new CanBeAbductedComponent()
+            world.AddComponent(entity, new AbductionComponent()
             {
                 source = Entity.NullEntity,
-                angle = angle
+                targetAngle = angle
             });
         }
     }
