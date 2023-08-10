@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 860914806207762781}
   - component: {fileID: 7578917871965474167}
   - component: {fileID: 1942393454531897979}
+  - component: {fileID: 9144556955269078750}
   m_Layer: 0
   m_Name: Spawner_Definition
   m_TagString: Untagged
@@ -374,6 +375,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityDefinitions: []
   abilitiesParent: {fileID: 498744392452689357}
+--- !u!114 &9144556955269078750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946682441395139535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924e506b6b404bcb91882b7a7eac3ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8330272852753441303
 GameObject:
   m_ObjectHideFlags: 0
