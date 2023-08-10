@@ -406,9 +406,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDamageEffects: []
   onDeathEffects:
-  - positionType: 0
+  - positionType: 1
     randomOffsetType: 0
-    attachPoint: 
+    attachPoint: hit
     range: 0.1
     definition: {fileID: 7807718640421459040, guid: 13ee7b3e48dde404eb2ec12b9e19b032, type: 3}
 --- !u!114 &2588912056669156927
@@ -423,7 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d18edad1f74c679538b2f8099a84fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachPointDefinitions: []
+  attachPointDefinitions:
+  - name: hit
+    position: {x: 0, y: 0, z: 0}
 --- !u!1 &5921691204201231206
 GameObject:
   m_ObjectHideFlags: 0
