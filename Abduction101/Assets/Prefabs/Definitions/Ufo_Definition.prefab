@@ -142,6 +142,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2020642281753268348}
+  - {fileID: 6100268178492449522}
   - {fileID: 7653816515028070419}
   m_Father: {fileID: 4324182910784962375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -258,6 +259,7 @@ GameObject:
   - component: {fileID: 7352355729040182322}
   - component: {fileID: 1127852944328088735}
   - component: {fileID: 5693826873448291695}
+  - component: {fileID: 5943649587923958226}
   m_Layer: 0
   m_Name: Ufo_Definition
   m_TagString: Untagged
@@ -506,6 +508,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40049d4fd6346e2b82285e47ad5e3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5943649587923958226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951763693678052241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc36e41330a74639b7ca005628c460af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6474459317013681271
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,3 +625,58 @@ MonoBehaviour:
       Min: 0
       Max: 360
     sorter: {fileID: 0}
+--- !u!1 &7988077814371879091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6100268178492449522}
+  - component: {fileID: 4725866963087600487}
+  m_Layer: 0
+  m_Name: Print
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6100268178492449522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988077814371879091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978120019607625393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4725866963087600487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988077814371879091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355c2bdb380742b6b5e6ff65c177503e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityDefinition:
+    name: Print
+    cooldown: 1
+    startTime: 0
+    executionType: 0
+    cooldownType: 0
+    resetCooldownType: 0
+    startsLoaded: 1
+    autoTarget: 0
+    targeting: {fileID: 0}
+    charges: 0

@@ -18,6 +18,48 @@ MonoBehaviour:
     frames:
     - sprite: {fileID: 21300000, guid: fd5bdc7a148610046a27a11ab354e592, type: 3}
       time: 0.06666667
+  - name: Spawn
+    frames:
+    - sprite: {fileID: 21300000, guid: 614e2ffdf045faf41b70db0d9294210d, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: a3ff0a9984eb10a4bb011a0a3aae268f, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 34ecea740792ff54e8fd2d6ccf9e37b9, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: c3f07b601ba205640acd25885136fbfd, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 5dbf187c36f45854ebf2eaa76c0d5f4c, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 77be37fc955e7a74aaceeb509afca268, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 00cdac5f8a9b4ae41a9595cb214446a4, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: cf498a72c93fd194a9112830ced6356b, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 14a7f7e0fc882d74882bb911bddd18eb, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: a3708566159569441a7aa88a296ab428, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 1c1f6bc5a01145d4abe7a8a92e4ef81f, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 9cff5cc51942002489121c11ecfb5933, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: ee604d859c3a87f42b64738f8df71a38, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 24d5b1e898bc56e4783bd2cebab536d8, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 4d6c5efbb5bb51f46886db00e752b76c, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 6358a75bcbcec1140badb83ecdd8ebde, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 58ce6af6093fc3f4daa2e0aea97dd327, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: a52a98c9b5355e74db11102a9d10738b, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 0d8222593950bfd47a72885b3ebbc98c, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 5add8a6d131e9504b9cb5b73d09c53d3, type: 3}
+      time: 0.06666667
   - name: Walk
     frames:
     - sprite: {fileID: 21300000, guid: e3283167d42085c41b96af64f574d672, type: 3}

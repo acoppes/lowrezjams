@@ -21,9 +21,14 @@ namespace Abduction101.Controllers
         [EntityDefinition]
         [SerializeField]
         private Object abductEffectDefinition;
+        
+        [EntityDefinition]
+        [SerializeField]
+        private Object printEffectDefinition;
 
         private ParticleSystem particles;
         private Entity abductEffect;
+        private Entity printEffect;
         
         public void OnInit(World world, Entity entity)
         {
@@ -34,7 +39,6 @@ namespace Abduction101.Controllers
         public void OnUpdate(World world, Entity entity, float dt)
         {
             ref var movement = ref entity.Get<MovementComponent>();
-            // movementComponent.speed = 0;
             movement.speed = movement.baseSpeed;
             
             // TODO: acceleration...
@@ -42,8 +46,6 @@ namespace Abduction101.Controllers
             ref var input = ref entity.Get<InputComponent>();
             // ref var bufferedInput = ref entity.Get<BufferedInputComponent>();
             ref var states = ref entity.Get<StatesComponent>();
-            
-            movement.movingDirection = input.direction3d();
            
             // ref var hasShadow = ref entity.Get<HasShadowComponent>();
             
@@ -52,6 +54,13 @@ namespace Abduction101.Controllers
             var abilities = entity.Get<AbilitiesComponent>();
             var abductAbility = abilities.GetAbility("Abduct");
             var consumeAbility = abilities.GetAbility("Consume");
+            var printAbility = abilities.GetAbility("Print");
+
+            if (states.HasState("PrintingAlien"))
+            {
+                // do stuff..
+                return;
+            }
             
             foreach (var target in consumeAbility.abilityTargets)
             {
@@ -81,16 +90,7 @@ namespace Abduction101.Controllers
                     particles.Play();
 
                     abductEffect.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
-
-                    // abductEffect.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
-                    // particles.transform.position =
-                    //     GamePerspective.ConvertFromWorld(new Vector3(position.value.x, 0, position.value.z));
-
-                    // spawn definition etc
-                    // return;
                 }
-                
-                // movementComponent.speed = movementComponent.baseSpeed;
             }
             
             if (abductAbility.isExecuting)
@@ -132,6 +132,22 @@ namespace Abduction101.Controllers
                     // destroy abduct effect
                     return;
                 }
+            }
+            
+            // check if enough biomass 
+            if (printAbility.isReady && input.button2().isPressed)
+            {
+                // start printing new alien...
+                printAbility.Start();
+                states.EnterState("PrintingAlien");
+
+                printEffect = world.CreateEntity(printEffectDefinition);
+                printEffect.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
+                
+                printEffect.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
+                
+                // create new alien in spawn state...
+                // locate effect
             }
         }
 
