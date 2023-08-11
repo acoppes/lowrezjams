@@ -1,11 +1,7 @@
 ﻿using Abduction101.Components;
-using Game;
-using Game.Components;
 using Gemserk.Leopotam.Ecs;
-using Gemserk.Utilities;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
-using UnityEngine;
 
 namespace Abduction101.Systems
 {
@@ -49,13 +45,7 @@ namespace Abduction101.Systems
                     }
                 }
             }
-            
-            // if (world.TryGetSingletonComponent(out WorldBoundsComponent worldBounds))
-            // {
-            //     
-            // }
-            
-            
+
         }
     }
 }
