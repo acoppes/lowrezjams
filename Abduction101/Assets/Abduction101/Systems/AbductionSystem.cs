@@ -5,9 +5,7 @@ using Gemserk.Leopotam.Ecs;
 using Gemserk.Utilities;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
-using MyBox;
 using UnityEngine;
-using Vector3 = System.Numerics.Vector3;
 
 namespace Abduction101.Systems
 {
@@ -17,7 +15,6 @@ namespace Abduction101.Systems
         readonly EcsFilterInject<Inc<PositionComponent, AbductionComponent, LookingDirection, VelocityComponent>, Exc<DisabledComponent>> filter = default;
         readonly EcsFilterInject<Inc<AbductionComponent, LookingDirection, PhysicsComponent>, Exc<DisabledComponent>> physicsFilter = default;
 
-        public float centerForce = 1000;
         public float rotationSpeed = 1;
         public bool resetSpeedOnStartAbduction = true;
         
@@ -83,8 +80,8 @@ namespace Abduction101.Systems
                     }
                 }
                 
-                physics.body.AddForce(abduction.vertical * abduction.abductionForce);
-                physics.body.AddForce(abduction.horizontal * centerForce);
+                physics.body.AddForce(abduction.vertical * abduction.abductionForce, ForceMode.Acceleration);
+                physics.body.AddForce(abduction.horizontal * abduction.abductionCenterForce, ForceMode.Acceleration);
                 
                 var angleDirection = abduction.targetAngle - abduction.currentAngle;
                 var nextAngle = abduction.currentAngle + angleDirection * rotationSpeed * dt;
@@ -97,7 +94,9 @@ namespace Abduction101.Systems
                 lookingDirection.value = Vector2.right.Rotate(abduction.currentAngle * Mathf.Deg2Rad);
 
                 abduction.abductedTimeout--;
+                
                 abduction.abductionForce = 0;
+                abduction.abductionCenterForce = 0;
                 
                 abduction.wasBeingAbducted = abduction.isBeingAbducted;
             }

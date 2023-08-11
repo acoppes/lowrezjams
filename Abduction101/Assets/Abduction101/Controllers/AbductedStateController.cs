@@ -41,10 +41,14 @@ namespace Abduction101.Controllers
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var animations = ref entity.Get<AnimationComponent>();
             ref var abduction = ref entity.Get<AbductionComponent>();
+            ref var gravityComponent = ref entity.Get<GravityComponent>();
             
             activeController.TakeControl(entity, this);
 
-            abduction.currentAngle = 0;
+            if (gravityComponent.inContactWithGround)
+            {
+                abduction.currentAngle = 0;
+            }
             
             if (entity.Has<MovementComponent>())
             {
@@ -57,8 +61,8 @@ namespace Abduction101.Controllers
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.Rotate;
-
-            entity.Get<GravityComponent>().disabled = true;
+            
+            gravityComponent.disabled = true;
             
             if (entity.Has<PhysicsComponent>())
             {
@@ -67,7 +71,7 @@ namespace Abduction101.Controllers
             
             animations.Play("Idle");
             
-            if (sfxDefinition != null)
+            if (sfxDefinition != null && gravityComponent.inContactWithGround)
             {
                 var sfxEntity = world.CreateEntity(sfxDefinition);
                 sfxEntity.Get<PositionComponent>().value = entity.Get<PositionComponent>().value;

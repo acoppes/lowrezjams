@@ -10,7 +10,9 @@ namespace Abduction101.Components
         public bool wasBeingAbducted;
         
         public float abductionSpeed;
+        
         public float abductionForce;
+        public float abductionCenterForce;
 
         public Entity source;
         public Vector3 center;

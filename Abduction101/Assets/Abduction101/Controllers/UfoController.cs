@@ -14,6 +14,7 @@ namespace Abduction101.Controllers
     {
         public float abductionSpeedMultiplier = 0.25f;
         public float abductionForce = 100;
+        public float abductionCenterForce = 1;
 
         public GameObject particlesPrefab;
         
@@ -112,6 +113,7 @@ namespace Abduction101.Controllers
                             abductedComponent.abductedTimeout = 2;
                             abductedComponent.abductionSpeed = 1;
                             abductedComponent.abductionForce += abductionForce;
+                            abductedComponent.abductionCenterForce += abductionCenterForce;
                             abductedComponent.source = entity;
                         }
                     }

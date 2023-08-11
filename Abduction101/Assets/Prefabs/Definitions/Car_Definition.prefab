@@ -371,11 +371,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   physicsComponentType: 0
-  shapeType: 3
-  size: {x: 0.1, y: 0.2, z: 0.1}
+  shapeType: 2
+  size: {x: 0.4, y: 0.2, z: 0.15}
   centerType: 0
   center: {x: 0, y: 0, z: 0}
-  mass: 80
+  mass: 500
   isStatic: 0
   isTrigger: 0
   defaultSyncType: 0
