@@ -26,3 +26,19 @@ MonoBehaviour:
     frames:
     - sprite: {fileID: 21300000, guid: 8389b4116b1acdf4684334adcc8e9bde, type: 3}
       time: 0.06666667
+  - name: Idle4
+    frames:
+    - sprite: {fileID: 21300000, guid: 600ad4ba9b75be4498bbfde1887fa1eb, type: 3}
+      time: 0.06666667
+  - name: Idle5
+    frames:
+    - sprite: {fileID: 21300000, guid: 0cee0b86bfba7bf4caa695a33c34f565, type: 3}
+      time: 0.06666667
+  - name: Idle6
+    frames:
+    - sprite: {fileID: 21300000, guid: 3136b1a8a86320647bc5336b7ff088d3, type: 3}
+      time: 0.06666667
+  - name: Idle7
+    frames:
+    - sprite: {fileID: 21300000, guid: f2db0d1c51be05b4b83a3d3e2057c49f, type: 3}
+      time: 0.06666667

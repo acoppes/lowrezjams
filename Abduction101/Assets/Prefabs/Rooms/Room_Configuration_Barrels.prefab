@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnData:
   - tag: barrel
-    chance: 0.5
+    chance: 0.35
 --- !u!114 &6705817665855577639
 MonoBehaviour:
   m_ObjectHideFlags: 0

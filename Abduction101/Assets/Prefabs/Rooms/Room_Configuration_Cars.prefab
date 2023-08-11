@@ -33,11 +33,11 @@ Transform:
   m_Children:
   - {fileID: 5678515444694904575}
   - {fileID: 2775404618825689624}
-  - {fileID: 3800164170281239297}
+  - {fileID: 3318794052915856731}
   - {fileID: 5870475489750784173}
   - {fileID: 1449223421322461112}
   - {fileID: 7272246279504721250}
-  - {fileID: 7367868876911865718}
+  - {fileID: 8975024255783774510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8123361509391749630
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnData:
   - tag: car
-    chance: 0.5
+    chance: 0.25
 --- !u!114 &6029310769186175239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c17610ca1ed06f48a3c1ba9bd58fc80, type: 3}
---- !u!4 &3800164170281239297 stripped
+--- !u!4 &3318794052915856731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1923701930807084635, guid: 5c17610ca1ed06f48a3c1ba9bd58fc80, type: 3}
   m_PrefabInstance: {fileID: 3800164170281239296}
@@ -555,7 +555,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c17610ca1ed06f48a3c1ba9bd58fc80, type: 3}
---- !u!4 &7367868876911865718 stripped
+--- !u!4 &8975024255783774510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1923701930807084635, guid: 5c17610ca1ed06f48a3c1ba9bd58fc80, type: 3}
   m_PrefabInstance: {fileID: 7367868876911865717}
