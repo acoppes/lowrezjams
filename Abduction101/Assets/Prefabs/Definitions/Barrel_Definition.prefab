@@ -266,7 +266,7 @@ MonoBehaviour:
   prefab: {fileID: 0}
   physicsComponentType: 0
   shapeType: 3
-  size: {x: 0.1, y: 0.2, z: 0.1}
+  size: {x: 0.05, y: 0.2, z: 0.05}
   centerType: 0
   center: {x: 0, y: 0, z: 0}
   mass: 80
