@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 188079796}
   - component: {fileID: 188079797}
   m_Layer: 0
-  m_Name: ControlInputAction(Input[/Keyboard/0])
+  m_Name: ControlInputAction(Input[/Keyboard/0,/XInputControllerWindows/start])
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,6 +441,14 @@ MonoBehaviour:
     - m_Name: 
       m_Id: b3aa1974-5080-48aa-94a0-304ce6b2458e
       m_Path: <Keyboard>/0
+      m_Interactions: Press(behavior=1)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 67b43f1d-4d15-4007-8369-97fcf6f3cb76
+      m_Path: <Gamepad>/start
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
