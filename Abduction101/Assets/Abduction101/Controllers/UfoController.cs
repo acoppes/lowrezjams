@@ -1,4 +1,5 @@
 using Abduction101.Components;
+using Abduction101.UI;
 using Game.Components;
 using Game.Components.Abilities;
 using Game.Systems;
@@ -35,11 +36,15 @@ namespace Abduction101.Controllers
         
         private Entity printEffect;
         private Entity printedAlien;
+
+        private BiomassContainerUI biomassUI;
         
         public void OnInit(World world, Entity entity)
         {
             particles = GameObject.Instantiate(particlesPrefab).GetComponent<ParticleSystem>();
             particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
+            biomassUI = FindObjectOfType<BiomassContainerUI>();
         }
         
         public void OnUpdate(World world, Entity entity, float dt)
@@ -60,6 +65,11 @@ namespace Abduction101.Controllers
             var abductAbility = abilities.GetAbility("Abduct");
             var consumeAbility = abilities.GetAbility("Consume");
             var printAbility = abilities.GetAbility("Print");
+            
+            if (biomassUI != null)
+            {
+                biomassUI.factor = biomassContainer.value.Progress;
+            }
 
             if (states.HasState("PrintingAlien"))
             {
@@ -71,6 +81,11 @@ namespace Abduction101.Controllers
                 var alienBiomass = printedAlien.Get<BiomassSourceComponent>();
                 biomassContainer.value.Decrease(alienBiomass.consumeValue * dt);
 
+                if (biomassUI != null)
+                {
+                    biomassUI.factor = biomassContainer.value.Progress;
+                }
+                
                 if (printedAlien.Exists())
                 {
                     var spawnAbility = printedAlien.Get<AbilitiesComponent>().GetAbility("Spawn");
@@ -121,6 +136,11 @@ namespace Abduction101.Controllers
                         {
                             var biomassSource = e.Get<BiomassSourceComponent>();
                             biomassContainer.value.Increase(biomassSource.consumeValue);
+                            
+                            if (biomassUI != null)
+                            {
+                                biomassUI.factor = biomassContainer.value.Progress;
+                            }
                         }
                     }
                 }
