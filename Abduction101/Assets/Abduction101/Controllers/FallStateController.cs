@@ -99,6 +99,12 @@ namespace Abduction101.Controllers
                 entity.Get<PhysicsComponent>().syncType = PhysicsComponent.SyncType.Both;
             }
             
+            if (entity.Has<MovementComponent>())
+            {
+                ref var movement = ref entity.Get<MovementComponent>();
+                movement.speed = movement.baseSpeed;
+            }
+            
             // ref var lookingDirection = ref entity.Get<LookingDirection>();
             // lookingDirection.value = Vector3.right;
             
