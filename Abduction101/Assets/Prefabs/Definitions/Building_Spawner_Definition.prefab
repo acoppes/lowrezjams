@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityDefinition:
     name: Spawn
-    cooldown: 4
+    cooldown: 5
     startTime: 0
     executionType: 0
     cooldownType: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 1942393454531897979}
   - component: {fileID: 9144556955269078750}
   m_Layer: 0
-  m_Name: Spawner_Definition
+  m_Name: Building_Spawner_Definition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,6 +433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnCount:
     Min: 0
-    Max: 3
+    Max: 2
   definitions:
   - {fileID: 5156139759902819513, guid: 02fc06357d1c5e344bc920c8c15a5047, type: 3}
