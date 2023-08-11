@@ -14,6 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sourceFolder: Assets/Sprites/Abduction101/Alien
   animations:
+  - name: Attack
+    frames:
+    - sprite: {fileID: 21300000, guid: 6e2ff916c0c1b474d899a72caadd1eed, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: dc2c592896c50934f96878df2b2eab02, type: 3}
+      time: 0.06666667
+  - name: AttackLoop
+    frames:
+    - sprite: {fileID: 21300000, guid: a20732fe12dc79742bdaf4f405b5b508, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: d7f53b10e0a7bdf4f8ee27e8eb9d3766, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 6918b1d149e27ec4fa654ead18792a64, type: 3}
+      time: 0.06666667
   - name: Idle
     frames:
     - sprite: {fileID: 21300000, guid: fd5bdc7a148610046a27a11ab354e592, type: 3}
