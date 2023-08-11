@@ -37,7 +37,7 @@ namespace Abduction101.Systems
                         hueModel.materialPropertyBlock.SetTexture("_MainTex",
                             model.instance.spriteRenderer.sprite.texture);
                     }
-                    hueModel.materialPropertyBlock.SetFloat("_HueDiff", UnityEngine.Random.Range(-0.5f, 0.5f));
+                    hueModel.materialPropertyBlock.SetFloat("_Hue", UnityEngine.Random.Range(-0.5f, 0.5f));
                     model.instance.spriteRenderer.SetPropertyBlock(hueModel.materialPropertyBlock);
                 }
             }

@@ -33,7 +33,7 @@ namespace Abduction101.Controllers
                     {
                         target.entity.Get<HealthComponent>().damages.Add(new DamageData()
                         {
-                            value = 1,
+                            value = 2f,
                             position = position.value,
                             knockback = true,
                             source = entity,
