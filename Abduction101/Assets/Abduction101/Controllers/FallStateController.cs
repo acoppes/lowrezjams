@@ -106,7 +106,7 @@ namespace Abduction101.Controllers
             }
             
             // ref var lookingDirection = ref entity.Get<LookingDirection>();
-            // lookingDirection.value = Vector3.right;
+            // lookingDirection.consumeValue = Vector3.right;
             
             ref var fall = ref entity.Get<FallStateComponent>();
             fall.falling = true;

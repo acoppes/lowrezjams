@@ -50,6 +50,7 @@ namespace Abduction101.Controllers
             ref var input = ref entity.Get<InputComponent>();
             ref var bufferedInput = ref entity.Get<BufferedInputComponent>();
             ref var states = ref entity.Get<StatesComponent>();
+            ref var biomassContainer = ref entity.Get<BiomassContainerComponent>();
            
             // ref var hasShadow = ref entity.Get<HasShadowComponent>();
             
@@ -67,13 +68,16 @@ namespace Abduction101.Controllers
 
                 var spawnCompleted = false;
 
+                var alienBiomass = printedAlien.Get<BiomassSourceComponent>();
+                biomassContainer.value.Decrease(alienBiomass.consumeValue * dt);
+
                 if (printedAlien.Exists())
                 {
                     var spawnAbility = printedAlien.Get<AbilitiesComponent>().GetAbility("Spawn");
                     spawnCompleted = !spawnAbility.isExecuting && !spawnAbility.pendingExecution;
                 }
 
-                if (!input.button2().isPressed || spawnCompleted)
+                if (!input.button2().isPressed || spawnCompleted || biomassContainer.value.IsEmpty)
                 {
                     printEffect.Get<DestroyableComponent>().destroy = true;
                     printEffect = Entity.NullEntity;
@@ -112,6 +116,12 @@ namespace Abduction101.Controllers
                             value = 1000,
                             source = entity
                         });
+
+                        if (e.Has<BiomassSourceComponent>())
+                        {
+                            var biomassSource = e.Get<BiomassSourceComponent>();
+                            biomassContainer.value.Increase(biomassSource.consumeValue);
+                        }
                     }
                 }
             }
@@ -171,9 +181,10 @@ namespace Abduction101.Controllers
                 }
             }
             
-            // check if enough biomass 
             if (printAbility.isReady && bufferedInput.HasBufferedAction(input.button2()) && input.button2().isPressed)
             {
+                // check if enough biomass 
+                
                 bufferedInput.ConsumeBuffer();
                 
                 // start printing new alien...
