@@ -29,6 +29,16 @@ namespace Abduction101.Controllers
                     animations.Play("Attack", 1);
                     
                     // SPAWN PROJECTILE
+
+                    var projectileEntity = world.CreateEntity(projectileDefinition);
+                    projectileEntity.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
+
+                    projectileEntity.Get<PositionComponent>().value =
+                        entity.Get<AttachPointsComponent>().attachPoints["weapon"].position;
+
+                    ref var projectile = ref projectileEntity.Get<ProjectileComponent>();
+                    projectile.source = entity;
+                    projectile.initialVelocity = entity.Get<LookingDirection>().value;
                     
                     return;
                 }
