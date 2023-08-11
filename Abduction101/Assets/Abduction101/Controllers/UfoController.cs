@@ -79,7 +79,6 @@ namespace Abduction101.Controllers
                 var spawnCompleted = false;
 
                 var alienBiomass = printedAlien.Get<BiomassSourceComponent>();
-                biomassContainer.value.Decrease(alienBiomass.consumeValue * dt);
 
                 if (biomassUI != null)
                 {
@@ -114,6 +113,8 @@ namespace Abduction101.Controllers
                     
                     printedAlien= Entity.NullEntity;
                 }
+                
+                biomassContainer.value.Decrease(alienBiomass.spawnConsumeSpeed * dt);
                 
                 return;
             }
@@ -201,7 +202,7 @@ namespace Abduction101.Controllers
                 }
             }
             
-            if (printAbility.isReady && bufferedInput.HasBufferedAction(input.button2()) && input.button2().isPressed)
+            if (printAbility.isReady && bufferedInput.HasBufferedAction(input.button2()) && input.button2().isPressed && !biomassContainer.value.IsEmpty)
             {
                 // check if enough biomass 
                 
@@ -220,6 +221,7 @@ namespace Abduction101.Controllers
                 printedAlien.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
 
                 printedAlien.Get<AbilitiesComponent>().GetAbility("Spawn").pendingExecution = true;
+                
                 
                 movement.speed = 0;
 

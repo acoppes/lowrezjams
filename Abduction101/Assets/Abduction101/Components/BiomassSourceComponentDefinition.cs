@@ -6,12 +6,16 @@ namespace Abduction101.Components
     {
         public float consumeValue;
         public float spawnCostValue;
+        public float spawnDuration;
+
+        public float spawnConsumeSpeed => spawnCostValue / spawnDuration;
     }
     
     public class BiomassSourceComponentDefinition : ComponentDefinitionBase
     {
         public float biomass;
         public float spawnCost;
+        public float spawnDuration;
         
         public override string GetComponentName()
         {
@@ -23,7 +27,8 @@ namespace Abduction101.Components
             world.AddComponent(entity, new BiomassSourceComponent()
             {
                 consumeValue = biomass,
-                spawnCostValue = spawnCost
+                spawnCostValue = spawnCost,
+                spawnDuration = spawnDuration
             });
         }
     }
