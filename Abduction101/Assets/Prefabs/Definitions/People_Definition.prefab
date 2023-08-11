@@ -645,6 +645,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e119aee39548bc8197c279144ad76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorSets:
+  - {fileID: 11400000, guid: dfd167f41acaa8741be02408cac9e158, type: 2}
+  - {fileID: 11400000, guid: d7a25980b9cc99d449ded3a2ea307566, type: 2}
+  - {fileID: 11400000, guid: 7d977d76fc744d041ad9927276bd130e, type: 2}
   hair: {fileID: 11400000, guid: 7d977d76fc744d041ad9927276bd130e, type: 2}
   skin: {fileID: 11400000, guid: d7a25980b9cc99d449ded3a2ea307566, type: 2}
   body: {fileID: 11400000, guid: dfd167f41acaa8741be02408cac9e158, type: 2}

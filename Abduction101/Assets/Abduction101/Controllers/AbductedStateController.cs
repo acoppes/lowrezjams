@@ -23,7 +23,7 @@ namespace Abduction101.Controllers
             {
                 if (!abduction.isBeingAbducted)
                 {
-                    StopAbduction(entity);
+                    StopAbduction(world, entity);
                 }
                 
                 return;
@@ -78,18 +78,25 @@ namespace Abduction101.Controllers
             }
         }
         
-        private void StopAbduction(Entity entity)
+        private void StopAbduction(World world, Entity entity)
         {
             ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
+            ref var gravityComponent = ref entity.Get<GravityComponent>();
             
             activeController.ReleaseControl(this);
             states.ExitState("IsBeingAbducted");
             
             // ref var model = ref entity.Get<ModelComponent>();
             // model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
+            
+            gravityComponent.disabled = false;
 
-            entity.Get<GravityComponent>().disabled = false;
+            if (gravityComponent.inContactWithGround)
+            {
+                ref var model = ref entity.Get<ModelComponent>();
+                model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
+            }
         }
 
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)

@@ -6,19 +6,14 @@ namespace Abduction101.Components
 {
     public struct ColorSetComponent : IEntityComponent
     {
-        public ColorSet hair;
-        public ColorSet skin;
-        public ColorSet body;
-
+        public ColorSet[] colorSets;
         public Texture2D lutTexture;
         public MaterialPropertyBlock materialPropertyBlock;
     }
     
-    public class UnitColorSetComponentDefinition : ComponentDefinitionBase
+    public class ColorSetComponentDefinition : ComponentDefinitionBase
     {
-        public ColorSet hair;
-        public ColorSet skin;
-        public ColorSet body;
+        public ColorSet[] colorSets;
         
         public override string GetComponentName()
         {
@@ -29,9 +24,7 @@ namespace Abduction101.Components
         {
             world.AddComponent(entity, new ColorSetComponent()
             {
-                hair = hair,
-                skin = skin,
-                body = body
+                colorSets = colorSets
             });
         }
     }

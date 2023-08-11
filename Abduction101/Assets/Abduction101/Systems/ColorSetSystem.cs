@@ -14,10 +14,8 @@ namespace Abduction101.Systems
         
         public void OnEntityDestroyed(World world, Entity entity)
         {
-            if (entity.Has<ColorSetComponent>() && entity.Has<ModelComponent>())
+            if (entity.Has<ColorSetComponent>())
             {
-                // return model to original setting
-                ref var model = ref entity.Get<ModelComponent>();
                 ref var colorSet = ref entity.Get<ColorSetComponent>();
 
                 if (colorSet.lutTexture != null)
@@ -37,12 +35,12 @@ namespace Abduction101.Systems
 
                 if (colorSet.lutTexture == null && model.instance != null && model.instance.spriteRenderer != null)
                 {
-                    var lutColors = new Color[]
+                    var lutColors = new Color[colorSet.colorSets.Length];
+                    
+                    for (var i = 0; i < lutColors.Length; i++)
                     {
-                        colorSet.body.colors.Random(),
-                        colorSet.skin.colors.Random(),
-                        colorSet.hair.colors.Random()
-                    };
+                        lutColors[i] = colorSet.colorSets[i].colors.Random();
+                    }
                     
                     colorSet.lutTexture = new Texture2D(lutColors.Length, 1, TextureFormat.ARGB32, false);
                     colorSet.lutTexture.filterMode = FilterMode.Point;
