@@ -85,6 +85,8 @@ GameObject:
   - component: {fileID: 5599089752451677651}
   - component: {fileID: 2357424078594009008}
   - component: {fileID: 6011956669350106776}
+  - component: {fileID: 3906767270708092427}
+  - component: {fileID: 5539451797324808116}
   m_Layer: 0
   m_Name: Alien_Definition
   m_TagString: Untagged
@@ -408,6 +410,50 @@ MonoBehaviour:
   isTrigger: 0
   defaultSyncType: 0
   colliderType: 3
+--- !u!114 &3906767270708092427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862796041920060664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b270f280f046239f9db195e4cb4d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamageEffects:
+  - positionType: 0
+    randomOffsetType: 1
+    attachPoint: 
+    range: 0.1
+    definition: {fileID: 44217927898655882, guid: e799df21d86265d48b2d2e77c12a5fb5, type: 3}
+  onDeathEffects:
+  - positionType: 0
+    randomOffsetType: 1
+    attachPoint: 
+    range: 0.1
+    definition: {fileID: 1543679130548177541, guid: 29190581b866c6a48b034aee1d743a2c, type: 3}
+  - positionType: 1
+    randomOffsetType: 0
+    attachPoint: hit
+    range: 0.1
+    definition: {fileID: 4590270868136436962, guid: 20cb344b09c6339479c15c5250337f5d, type: 3}
+--- !u!114 &5539451797324808116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862796041920060664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d18edad1f74c679538b2f8099a84fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachPointDefinitions:
+  - name: hit
+    position: {x: 0, y: 0.1, z: 0}
 --- !u!1 &2873780973292583295
 GameObject:
   m_ObjectHideFlags: 0

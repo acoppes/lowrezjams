@@ -25,10 +25,16 @@ namespace Abduction101.Controllers
         [EntityDefinition]
         [SerializeField]
         private Object printEffectDefinition;
+        
+        [EntityDefinition]
+        [SerializeField]
+        private Object alienDefinition;
 
         private ParticleSystem particles;
         private Entity abductEffect;
+        
         private Entity printEffect;
+        private Entity printedAlien;
         
         public void OnInit(World world, Entity entity)
         {
@@ -44,7 +50,7 @@ namespace Abduction101.Controllers
             // TODO: acceleration...
             
             ref var input = ref entity.Get<InputComponent>();
-            // ref var bufferedInput = ref entity.Get<BufferedInputComponent>();
+            ref var bufferedInput = ref entity.Get<BufferedInputComponent>();
             ref var states = ref entity.Get<StatesComponent>();
            
             // ref var hasShadow = ref entity.Get<HasShadowComponent>();
@@ -59,6 +65,39 @@ namespace Abduction101.Controllers
             if (states.HasState("PrintingAlien"))
             {
                 // do stuff..
+                movement.speed = 0;
+
+                var spawnCompleted = false;
+
+                if (printedAlien.Exists())
+                {
+                    var spawnAbility = printedAlien.Get<AbilitiesComponent>().GetAbility("Spawn");
+                    spawnCompleted = !spawnAbility.isExecuting && !spawnAbility.pendingExecution;
+                }
+
+                if (!input.button2().isPressed || spawnCompleted)
+                {
+                    printEffect.Get<DestroyableComponent>().destroy = true;
+                    printEffect = Entity.NullEntity;
+                    
+                    printAbility.Stop(Ability.StopType.Interrupted);
+                    states.ExitState("PrintingAlien");
+
+                    if (printedAlien.Exists())
+                    {
+                        if (!spawnCompleted)
+                        {
+                            // perform damage
+                            printedAlien.Get<HealthComponent>().damages.Add(new DamageData()
+                            {
+                                value = 1000
+                            });
+                        }
+                    }
+                    
+                    printedAlien= Entity.NullEntity;
+                }
+                
                 return;
             }
             
@@ -135,17 +174,26 @@ namespace Abduction101.Controllers
             }
             
             // check if enough biomass 
-            if (printAbility.isReady && input.button2().isPressed)
+            if (printAbility.isReady && bufferedInput.HasBufferedAction(input.button2()) && input.button2().isPressed)
             {
+                bufferedInput.ConsumeBuffer();
+                
                 // start printing new alien...
                 printAbility.Start();
                 states.EnterState("PrintingAlien");
 
                 printEffect = world.CreateEntity(printEffectDefinition);
                 printEffect.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
-                
                 printEffect.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
+
+                printedAlien = world.CreateEntity(alienDefinition);
+                printedAlien.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
+                printedAlien.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
+
+                printedAlien.Get<AbilitiesComponent>().GetAbility("Spawn").pendingExecution = true;
                 
+                movement.speed = 0;
+
                 // create new alien in spawn state...
                 // locate effect
             }
