@@ -47,8 +47,6 @@ namespace Abduction101.Controllers
             ref var movement = ref entity.Get<MovementComponent>();
             movement.speed = movement.baseSpeed;
             
-            // TODO: acceleration...
-            
             ref var input = ref entity.Get<InputComponent>();
             ref var bufferedInput = ref entity.Get<BufferedInputComponent>();
             ref var states = ref entity.Get<StatesComponent>();
