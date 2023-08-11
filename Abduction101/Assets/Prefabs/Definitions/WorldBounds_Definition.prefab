@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8243484039411080835}
   - component: {fileID: 6708289822668133123}
   m_Layer: 0
-  m_Name: WorldBounds_Defition
+  m_Name: WorldBounds_Definition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

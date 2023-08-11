@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 598521769511227778}
   - component: {fileID: 7288934308409645361}
   - component: {fileID: 6571295507226214853}
+  - component: {fileID: 1740516807736212452}
+  - component: {fileID: 8699664948505395703}
   m_Layer: 0
   m_Name: Ufo_Enemy_Definition
   m_TagString: Untagged
@@ -206,3 +208,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minZ: 0
   maxZ: 0
+--- !u!114 &1740516807736212452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862796041920060664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca57faa7304bf2848a5d81649027d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  invulnerabilityTime: 0
+  autoDestroyOnDeath: 1
+  autoDisableOnDeath: 0
+  hasHealthBar: 0
+  healthBarOffset: {x: 0, y: 0, z: 0}
+  healthBarSize: 1
+--- !u!114 &8699664948505395703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862796041920060664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96123f8bf3aa4ef381716d018af7ff95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
