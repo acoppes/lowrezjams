@@ -102,7 +102,7 @@ MonoBehaviour:
   rotationType: 0
   startingColor: {r: 1, g: 1, b: 1, a: 1}
   sortingLayerType: 1
-  sortingOrder: -1
+  sortingOrder: 0
   sortingLayer: Background
 --- !u!114 &6211626767202528667
 MonoBehaviour:

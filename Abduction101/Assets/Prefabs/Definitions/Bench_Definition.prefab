@@ -10,18 +10,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2050064341307228834, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
       propertyPath: m_Name
-      value: LightPole_Definition
+      value: Bench_Definition
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781058067337739649, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
+      propertyPath: health
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3093745484737833803, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
       propertyPath: onDeathEffects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3093745484737833803, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
-      propertyPath: onDeathEffects.Array.data[1].attachPoint
-      value: hit
-      objectReference: {fileID: 0}
-    - target: {fileID: 3093745484737833803, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
-      propertyPath: onDeathEffects.Array.data[1].positionType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7346829365125575136, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
@@ -64,15 +60,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7887085077962350420, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
-      propertyPath: colliderType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8795319345772460811, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
       propertyPath: animationsAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 915a4da9c0cba714e971db4877b1ad3d, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 11400000, guid: b6e810a3573d14f4b9bcb0d0eba67f72, type: 2}
+    m_RemovedComponents:
+    - {fileID: 2653003529035319301, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

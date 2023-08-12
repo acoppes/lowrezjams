@@ -714,8 +714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00b3d7054324e1b9243e8e1dc7a4e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biomass: 1
+  biomass: 2.5
   spawnCost: 0
+  spawnDuration: 0
 --- !u!1 &5921691204201231206
 GameObject:
   m_ObjectHideFlags: 0

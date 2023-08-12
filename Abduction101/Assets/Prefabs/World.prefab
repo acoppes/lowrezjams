@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minZ: -1.75
-  maxZ: 1.5
+  maxZ: 1.75
 --- !u!1 &4830741146388992942
 GameObject:
   m_ObjectHideFlags: 0

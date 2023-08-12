@@ -313,9 +313,9 @@ MonoBehaviour:
   prefab: {fileID: 4258507774620910417, guid: a85672830ed2c9045af0993f84ab5653, type: 3}
   rotationType: 2
   startingColor: {r: 1, g: 1, b: 1, a: 1}
-  sortingLayerType: 1
-  sortingOrder: -1
-  sortingLayer: Background
+  sortingLayerType: 0
+  sortingOrder: 0
+  sortingLayer: 
 --- !u!114 &7911328857723782591
 MonoBehaviour:
   m_ObjectHideFlags: 0
