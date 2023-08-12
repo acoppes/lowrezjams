@@ -65,8 +65,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7887085077962350420, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
-      propertyPath: colliderType
-      value: 2
+      propertyPath: size.x
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887085077962350420, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
+      propertyPath: size.z
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 8795319345772460811, guid: 0e2426f61e1f6724dafa5c3c06c1f7d8, type: 3}
       propertyPath: animationsAsset
