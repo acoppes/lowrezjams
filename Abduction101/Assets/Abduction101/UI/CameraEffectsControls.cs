@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Abduction101.UI
@@ -30,6 +32,34 @@ namespace Abduction101.UI
 
             material = new Material(rawImage.material);
             ReloadMaterial();
+        }
+
+        private void Update()
+        {
+            var reload = false;
+            
+            if (Keyboard.current.digit1Key.wasReleasedThisFrame)
+            {
+                scanLinesOn = !scanLinesOn;
+                reload = true;
+            }
+            
+            if (Keyboard.current.digit2Key.wasReleasedThisFrame)
+            {
+                crtOn = !crtOn;
+                reload = true;
+            }
+            
+            if (Keyboard.current.digit3Key.wasReleasedThisFrame)
+            {
+                vignetteOn = !vignetteOn;
+                reload = true;
+            }
+
+            if (reload)
+            {
+                ReloadMaterial();
+            }
         }
 
         private void ReloadMaterial()
