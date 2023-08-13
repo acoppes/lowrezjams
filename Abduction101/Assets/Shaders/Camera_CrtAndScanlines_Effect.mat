@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CrtImageEffect
+  m_Name: Camera_CrtAndScanlines_Effect
   m_Shader: {fileID: 4800000, guid: 3742d9fc93c24fc7906c3067c5b91f0e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

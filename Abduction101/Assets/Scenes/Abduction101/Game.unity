@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 188079796}
   - component: {fileID: 188079797}
   m_Layer: 0
-  m_Name: ControlInputAction(Input[/Keyboard/0,/XInputControllerWindows/start])
+  m_Name: ControlInputAction(Input[/Keyboard/0])
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4203,6 +4203,7 @@ GameObject:
   - component: {fileID: 1452743601}
   - component: {fileID: 1452743600}
   - component: {fileID: 1452743599}
+  - component: {fileID: 1452743602}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4293,6 +4294,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1452743602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452743597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b40b663dfe597448a1b937b114a4bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultScanLines: 1
+  defaultCrt: 1
+  defaultVignette: 1
+  scanLinesWidth: 1
+  vignetteSize: 1.8
+  crtBend: 3.5
+  rawImage: {fileID: 1463235988}
 --- !u!1001 &1454203552
 PrefabInstance:
   m_ObjectHideFlags: 0
