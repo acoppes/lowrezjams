@@ -11,6 +11,8 @@ namespace Abduction101.Controllers
     public class ExplosionController : ControllerBase, IUpdate
     {
         public Targeting targeting;
+
+        public float damage = 2.0f;
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
@@ -33,7 +35,7 @@ namespace Abduction101.Controllers
                     {
                         target.entity.Get<HealthComponent>().damages.Add(new DamageData()
                         {
-                            value = 2f,
+                            value = damage,
                             position = position.value,
                             knockback = true,
                             source = entity,

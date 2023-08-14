@@ -1,4 +1,5 @@
 using Abduction101.Components;
+using Abduction101.Systems;
 using Abduction101.UI;
 using Game.Components;
 using Game.Components.Abilities;
@@ -11,7 +12,7 @@ using UnityEngine;
 
 namespace Abduction101.Controllers
 {
-    public class UfoController : ControllerBase, IUpdate, IInit
+    public class UfoController : ControllerBase, IUpdate, IInit, IDamagedEvent
     {
         public float abductionSpeedMultiplier = 0.25f;
         public float abductionForce = 100;
@@ -32,10 +33,10 @@ namespace Abduction101.Controllers
         private Object alienDefinition;
 
         private ParticleSystem particles;
-        private Entity abductEffect;
+        private Entity abductEffect = Entity.NullEntity;
         
-        private Entity printEffect;
-        private Entity printedAlien;
+        private Entity printEffect = Entity.NullEntity;
+        private Entity printedAlien = Entity.NullEntity;
 
         private GameHud gameHud;
         
@@ -45,6 +46,26 @@ namespace Abduction101.Controllers
             particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
             gameHud = FindObjectOfType<GameHud>();
+        }
+        
+        public void OnDamaged(World world, Entity entity)
+        {
+            if (entity.Get<HealthComponent>().aliveType == HealthComponent.AliveType.Death)
+            {
+                if (abductEffect.Exists())
+                {
+                    abductEffect.Get<DestroyableComponent>().destroy = true;
+                    abductEffect = Entity.NullEntity;
+                    
+                    particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                }
+
+                if (printEffect.Exists())
+                {
+                    printEffect.Get<DestroyableComponent>().destroy = true;
+                    printEffect = Entity.NullEntity;
+                }
+            }
         }
         
         public void OnUpdate(World world, Entity entity, float dt)
@@ -243,6 +264,7 @@ namespace Abduction101.Controllers
                 // locate effect
             }
         }
+
 
 
     }

@@ -70,12 +70,12 @@ namespace Abduction101.UI
                 }
             }
             
+            healthUI.factor = 0;
+            
             foreach (var e in mainPlayerFilter)
             {
                 var entity = world.GetEntity(e);
                 var healthComponent = entity.Get<HealthComponent>();
-
-                healthUI.factor = 0;
                 
                 if (healthComponent.aliveType != HealthComponent.AliveType.Alive)
                     continue;

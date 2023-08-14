@@ -550,8 +550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca57faa7304bf2848a5d81649027d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  invulnerabilityTime: 0
+  health: 8
+  invulnerabilityTime: 0.1
   autoDestroyOnDeath: 1
   autoDisableOnDeath: 0
   hasHealthBar: 0
