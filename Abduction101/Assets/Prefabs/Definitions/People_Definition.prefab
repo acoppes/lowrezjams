@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 6113542213292490123}
   - component: {fileID: 3324718578068611142}
   - component: {fileID: 3646161478788838835}
+  - component: {fileID: 5235428044783342095}
   m_Layer: 0
   m_Name: People_Definition
   m_TagString: Untagged
@@ -717,6 +718,19 @@ MonoBehaviour:
   biomass: 2
   spawnCost: 0
   spawnDuration: 0
+--- !u!114 &5235428044783342095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156139759902819513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f1d6634f804ec1a06492d6f8a0afc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &5921691204201231206
 GameObject:
   m_ObjectHideFlags: 0
