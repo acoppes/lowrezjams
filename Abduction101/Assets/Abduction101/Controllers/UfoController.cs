@@ -37,14 +37,14 @@ namespace Abduction101.Controllers
         private Entity printEffect;
         private Entity printedAlien;
 
-        private BiomassContainerUI biomassUI;
+        private GameHud gameHud;
         
         public void OnInit(World world, Entity entity)
         {
             particles = GameObject.Instantiate(particlesPrefab).GetComponent<ParticleSystem>();
             particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 
-            biomassUI = FindObjectOfType<BiomassContainerUI>();
+            gameHud = FindObjectOfType<GameHud>();
         }
         
         public void OnUpdate(World world, Entity entity, float dt)
@@ -66,9 +66,9 @@ namespace Abduction101.Controllers
             var consumeAbility = abilities.GetAbility("Consume");
             var printAbility = abilities.GetAbility("Print");
             
-            if (biomassUI != null)
+            if (gameHud != null)
             {
-                biomassUI.factor = biomassContainer.value.Progress;
+                gameHud.totalBiomass = biomassContainer.value.current;
             }
 
             if (states.HasState("PrintingAlien"))
@@ -80,9 +80,9 @@ namespace Abduction101.Controllers
 
                 var alienBiomass = printedAlien.Get<BiomassSourceComponent>();
 
-                if (biomassUI != null)
+                if (gameHud != null)
                 {
-                    biomassUI.factor = biomassContainer.value.Progress;
+                    gameHud.totalBiomass = biomassContainer.value.current;
                 }
                 
                 if (printedAlien.Exists())
@@ -138,9 +138,9 @@ namespace Abduction101.Controllers
                             var biomassSource = e.Get<BiomassSourceComponent>();
                             biomassContainer.value.Increase(biomassSource.consumeValue);
                             
-                            if (biomassUI != null)
+                            if (gameHud != null)
                             {
-                                biomassUI.factor = biomassContainer.value.Progress;
+                                gameHud.totalBiomass = biomassContainer.value.current;
                             }
                         }
                     }

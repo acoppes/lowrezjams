@@ -1174,6 +1174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanIndicatorUI: {fileID: 7174566035878949851}
   alienIndicatorUI: {fileID: 2468472766037194392}
+  alienIcon: {fileID: 1942515891714996775}
 --- !u!1 &3449804192661186935
 GameObject:
   m_ObjectHideFlags: 0

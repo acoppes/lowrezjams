@@ -4,6 +4,8 @@ using Game.Components;
 using Gemserk.Leopotam.Ecs;
 using Leopotam.EcsLite;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Abduction101.UI
 {
@@ -15,6 +17,13 @@ namespace Abduction101.UI
         private World world;
 
         private EcsFilter unitsFilter;
+
+        public float alienCost = 8;
+        
+        [NonSerialized]
+        public float totalBiomass;
+
+        public Image alienIcon;
         
         private void Start()
         {
@@ -26,6 +35,8 @@ namespace Abduction101.UI
 
         private void LateUpdate()
         {
+            alienIcon.color = totalBiomass < alienCost ? new Color(1, 1, 1, 0.25f) : Color.white;
+            
             if (world == null)
             {
                 humanIndicatorUI.count = 0;
