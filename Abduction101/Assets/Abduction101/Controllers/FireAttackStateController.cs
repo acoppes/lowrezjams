@@ -12,6 +12,9 @@ namespace Abduction101.Controllers
     public class FireAttackStateController : ControllerBase, IUpdate, IActiveController
     {
         public Object projectileDefinition;
+
+        public Object sfxDefinition;
+        
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
@@ -39,6 +42,12 @@ namespace Abduction101.Controllers
                     ref var projectile = ref projectileEntity.Get<ProjectileComponent>();
                     projectile.source = entity;
                     projectile.initialVelocity = entity.Get<LookingDirection>().value;
+                    
+                    if (sfxDefinition != null)
+                    {
+                        var sfxEntity = world.CreateEntity(sfxDefinition);
+                        sfxEntity.Get<PositionComponent>().value = entity.Get<PositionComponent>().value;
+                    }
                     
                     return;
                 }

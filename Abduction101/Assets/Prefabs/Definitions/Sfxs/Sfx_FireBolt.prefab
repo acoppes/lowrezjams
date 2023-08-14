@@ -65,8 +65,8 @@ MonoBehaviour:
   volume: 0.3
   loop: 0
   randomPitch:
-    Min: 0.8
-    Max: 1.2
+    Min: 0.9
+    Max: 1.1
 --- !u!114 &2904525540760705219
 MonoBehaviour:
   m_ObjectHideFlags: 0
