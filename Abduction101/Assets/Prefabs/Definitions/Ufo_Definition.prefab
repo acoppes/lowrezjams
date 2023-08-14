@@ -632,6 +632,7 @@ MonoBehaviour:
   abductEffectDefinition: {fileID: 6331399880278644861, guid: 31185e82f34ac9946a0bd34ab235dce2, type: 3}
   printEffectDefinition: {fileID: 6331399880278644861, guid: dd12026a76755e646bb86d9d80075ad8, type: 3}
   alienDefinition: {fileID: 2862796041920060664, guid: b2f3d69c4df67f7448305a9415aa3e4d, type: 3}
+  abductCompletedSfxDefinition: {fileID: 2637366807198578712, guid: 79ce008f7bd3728439e5ffad13b113c2, type: 3}
 --- !u!1 &7690907909632291922
 GameObject:
   m_ObjectHideFlags: 0

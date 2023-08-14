@@ -5983,6 +5983,7 @@ MonoBehaviour:
   abductEffectDefinition: {fileID: 0}
   printEffectDefinition: {fileID: 0}
   alienDefinition: {fileID: 0}
+  abductCompletedSfxDefinition: {fileID: 0}
 --- !u!1001 &137358146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60332,6 +60333,7 @@ MonoBehaviour:
   abductEffectDefinition: {fileID: 0}
   printEffectDefinition: {fileID: 0}
   alienDefinition: {fileID: 0}
+  abductCompletedSfxDefinition: {fileID: 0}
 --- !u!1 &1321767219
 GameObject:
   m_ObjectHideFlags: 0
@@ -70951,6 +70953,7 @@ MonoBehaviour:
   abductEffectDefinition: {fileID: 0}
   printEffectDefinition: {fileID: 0}
   alienDefinition: {fileID: 0}
+  abductCompletedSfxDefinition: {fileID: 0}
 --- !u!1 &1595365063
 GameObject:
   m_ObjectHideFlags: 0

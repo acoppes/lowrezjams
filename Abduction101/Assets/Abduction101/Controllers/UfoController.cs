@@ -40,6 +40,8 @@ namespace Abduction101.Controllers
 
         private GameHud gameHud;
         
+        public Object abductCompletedSfxDefinition;
+        
         public void OnInit(World world, Entity entity)
         {
             particles = GameObject.Instantiate(particlesPrefab).GetComponent<ParticleSystem>();
@@ -168,6 +170,13 @@ namespace Abduction101.Controllers
 
                             // in this case, I want to consume the entity without destroying it.
                             e.Get<DestroyableComponent>().destroy = true;
+                            
+                                                
+                            if (abductCompletedSfxDefinition != null)
+                            {
+                                var sfxEntity = world.CreateEntity(abductCompletedSfxDefinition);
+                                sfxEntity.Get<PositionComponent>().value = entity.Get<PositionComponent>().value;
+                            }
                         }
                         else
                         {
