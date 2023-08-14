@@ -1265,6 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanIndicatorUI: {fileID: 7174566035878949851}
   alienIndicatorUI: {fileID: 2468472766037194392}
+  healthUI: {fileID: 7247214271715539696}
   alienCost: 8
   alienIcon: {fileID: 5285317809674848628}
 --- !u!1 &3449804192661186935

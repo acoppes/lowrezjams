@@ -261,6 +261,9 @@ GameObject:
   - component: {fileID: 5693826873448291695}
   - component: {fileID: 5943649587923958226}
   - component: {fileID: 1914475701095807244}
+  - component: {fileID: 1445353251212758397}
+  - component: {fileID: -1110304893409428139}
+  - component: {fileID: 5408019446010598033}
   m_Layer: 0
   m_Name: Ufo_Definition
   m_TagString: Untagged
@@ -535,6 +538,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   total: 32
   startingValue: 0
+--- !u!114 &1445353251212758397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951763693678052241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca57faa7304bf2848a5d81649027d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  invulnerabilityTime: 0
+  autoDestroyOnDeath: 1
+  autoDisableOnDeath: 0
+  hasHealthBar: 0
+  healthBarOffset: {x: 0, y: 0, z: 0}
+  healthBarSize: 1
+--- !u!114 &-1110304893409428139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951763693678052241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de7c4458b6b4054826767f915b3af39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5408019446010598033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951763693678052241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95cb5e3f35c4e95834311f8b6a3bf56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6474459317013681271
 GameObject:
   m_ObjectHideFlags: 0

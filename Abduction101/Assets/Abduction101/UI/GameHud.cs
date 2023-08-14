@@ -4,7 +4,6 @@ using Game.Components;
 using Gemserk.Leopotam.Ecs;
 using Leopotam.EcsLite;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Abduction101.UI
@@ -13,10 +12,12 @@ namespace Abduction101.UI
     {
         public ElementCountIndicatorUI humanIndicatorUI;
         public ElementCountIndicatorUI alienIndicatorUI;
+        public HealthUI healthUI;
 
         private World world;
 
         private EcsFilter unitsFilter;
+        private EcsFilter mainPlayerFilter;
 
         public float alienCost = 8;
         
@@ -29,6 +30,9 @@ namespace Abduction101.UI
         {
             world = World.Instance;
             unitsFilter = world.EcsWorld.Filter<UnitTypeComponent>()
+                .Inc<HealthComponent>()
+                .Exc<DisabledComponent>().End();
+            mainPlayerFilter = world.EcsWorld.Filter<MainPlayerComponent>()
                 .Inc<HealthComponent>()
                 .Exc<DisabledComponent>().End();
         }
@@ -64,6 +68,19 @@ namespace Abduction101.UI
                 {
                     alienCount++;
                 }
+            }
+            
+            foreach (var e in mainPlayerFilter)
+            {
+                var entity = world.GetEntity(e);
+                var healthComponent = entity.Get<HealthComponent>();
+
+                healthUI.factor = 0;
+                
+                if (healthComponent.aliveType != HealthComponent.AliveType.Alive)
+                    continue;
+
+                healthUI.factor = healthComponent.factor;
             }
             
             humanIndicatorUI.count = humanCount;

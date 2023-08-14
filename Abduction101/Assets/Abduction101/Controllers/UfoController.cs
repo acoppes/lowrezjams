@@ -121,7 +121,7 @@ namespace Abduction101.Controllers
             
             foreach (var target in consumeAbility.abilityTargets)
             {
-                if (target.valid && target.target.entity.Exists())
+                if (target.valid && target.target.entity.Exists() && target.target.entity != entity)
                 {
                     var e = target.target.entity;
                     
