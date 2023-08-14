@@ -124,24 +124,38 @@ namespace Abduction101.Controllers
                 if (target.valid && target.target.entity.Exists())
                 {
                     var e = target.target.entity;
-                    if (e.Has<DestroyableComponent>())
+                    
+                    if (e.Has<HealthComponent>())
                     {
-                        e.Get<HealthComponent>().damages.Add(new DamageData()
-                        {
-                            position = target.position,
-                            value = 1000,
-                            source = entity
-                        });
+                        ref var targetHealth = ref e.Get<HealthComponent>();
 
+                        if (targetHealth.aliveType != HealthComponent.AliveType.Alive)
+                        {
+                            continue;
+                        }
+                        
                         if (e.Has<BiomassSourceComponent>())
                         {
-                            var biomassSource = e.Get<BiomassSourceComponent>();
+                            ref var biomassSource = ref e.Get<BiomassSourceComponent>();
                             biomassContainer.value.Increase(biomassSource.consumeValue);
+                            biomassSource.consumeValue = 0;
                             
                             if (gameHud != null)
                             {
                                 gameHud.totalBiomass = biomassContainer.value.current;
                             }
+
+                            // in this case, I want to consume the entity without destroying it.
+                            e.Get<DestroyableComponent>().destroy = true;
+                        }
+                        else
+                        {
+                            targetHealth.damages.Add(new DamageData()
+                            {
+                                position = target.position,
+                                value = 1000,
+                                source = entity
+                            });
                         }
                     }
                 }
