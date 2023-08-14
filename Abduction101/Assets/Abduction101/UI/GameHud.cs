@@ -35,7 +35,8 @@ namespace Abduction101.UI
 
         private void LateUpdate()
         {
-            alienIcon.color = totalBiomass < alienCost ? new Color(1, 1, 1, 0.25f) : Color.white;
+            alienIcon.fillAmount = Mathf.Clamp01(totalBiomass / alienCost);
+            // alienIcon.color = totalBiomass < alienCost ? new Color(1, 1, 1, 0.25f) : Color.white;
             
             if (world == null)
             {
