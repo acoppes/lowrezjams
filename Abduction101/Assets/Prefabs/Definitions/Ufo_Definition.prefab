@@ -615,6 +615,8 @@ MonoBehaviour:
   obliterationRayDefinition: {fileID: 6331399880278644861, guid: 3cebc5a150015ae41ad228cafb200d5c, type: 3}
   alienDefinition: {fileID: 2862796041920060664, guid: b2f3d69c4df67f7448305a9415aa3e4d, type: 3}
   abductCompletedSfxDefinition: {fileID: 2637366807198578712, guid: 79ce008f7bd3728439e5ffad13b113c2, type: 3}
+  obliterationRayActivated: {fileID: 11400000, guid: 3c23a129ebb49544e9ffe2aff5dd2af8, type: 2}
+  obliterationRayCompleted: {fileID: 11400000, guid: 24cf53e2c492bfb44a0133191be42436, type: 2}
 --- !u!1 &7690907909632291922
 GameObject:
   m_ObjectHideFlags: 0

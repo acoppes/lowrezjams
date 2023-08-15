@@ -2,6 +2,7 @@
 using Game.Components.Abilities;
 using Game.Controllers;
 using Gemserk.Leopotam.Ecs;
+using Gemserk.Leopotam.Ecs.Components;
 using Gemserk.Leopotam.Ecs.Controllers;
 using Gemserk.Leopotam.Ecs.Events;
 
@@ -23,9 +24,17 @@ namespace Abduction101.Controllers
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             var obliterateAbility = abilities.GetAbility("Obliterate");
             
+            if (animations.IsPlaying("End") && animations.isCompleted)
+            {
+                entity.Get<DestroyableComponent>().destroy = true;
+                return;
+            }
+            
             if (animations.IsPlaying("Start") && animations.isCompleted)
             {
                 animations.Play("Loop");
+                obliterateAbility.Start();
+                return;
             }
             
             if (animations.IsPlaying("Loop"))
@@ -48,6 +57,11 @@ namespace Abduction101.Controllers
                             source = entity
                         });
                     }
+                }
+
+                if (!obliterateAbility.isExecuting)
+                {
+                    animations.Play("End", 1);
                 }
 
             }

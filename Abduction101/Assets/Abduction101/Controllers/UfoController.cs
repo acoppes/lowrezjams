@@ -8,6 +8,7 @@ using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Components;
 using Gemserk.Leopotam.Ecs.Controllers;
 using Gemserk.Leopotam.Ecs.Events;
+using Gemserk.Utilities.Signals;
 using UnityEngine;
 
 namespace Abduction101.Controllers
@@ -17,6 +18,7 @@ namespace Abduction101.Controllers
         public float abductionSpeedMultiplier = 0.25f;
         public float abductionForce = 100;
         public float abductionCenterForce = 1;
+        public float obliterationConsumeTime = 20.0f;
 
         public GameObject particlesPrefab;
         
@@ -47,6 +49,9 @@ namespace Abduction101.Controllers
         private GameHud gameHud;
         
         public Object abductCompletedSfxDefinition;
+
+        public SignalAsset obliterationRayActivated;
+        public SignalAsset obliterationRayCompleted;
         
         public void OnInit(World world, Entity entity)
         {
@@ -110,6 +115,27 @@ namespace Abduction101.Controllers
             if (states.HasState("ObliterationRay"))
             {
                 obliterationRayEntity.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
+                // consume total in 15 seconds
+                var consumeFactor = obliterationAbility.cooldown.Total / obliterationConsumeTime;
+                obliterationAbility.cooldown.Decrease(consumeFactor * dt);
+
+                if (obliterationAbility.cooldown.IsEmpty)
+                {
+                    // stop ability, destroy ray
+                    // send signal
+                    obliterationRayEntity.GetAbilitiesComponent().GetAbility("Obliterate").Stop(Ability.StopType.Completed);
+                    // obliterationRayEntity.Get<DestroyableComponent>().destroy = true;
+                    obliterationRayEntity = Entity.NullEntity;
+                    
+                    obliterationAbility.Stop(Ability.StopType.Completed);
+
+                    if (obliterationRayCompleted != null)
+                    {
+                        obliterationRayCompleted.Signal(entity);
+                    }
+                    
+                    states.ExitState("ObliterationRay");
+                }
                 return;
             }
 
@@ -302,6 +328,11 @@ namespace Abduction101.Controllers
                 obliterationRayEntity = world.CreateEntity(obliterationRayDefinition);
                 obliterationRayEntity.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
                 obliterationRayEntity.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
+
+                if (obliterationRayActivated != null)
+                {
+                    obliterationRayActivated.Signal(entity);
+                }
             }
         }
 
