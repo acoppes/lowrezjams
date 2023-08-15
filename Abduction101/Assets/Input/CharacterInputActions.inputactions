@@ -344,6 +344,28 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "d3ec0340-d69f-4c05-8725-815802661353",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Button3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ae5ab18-f7c0-45fc-8056-d0c5e67fc495",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Button3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "f84a567a-eb6e-4ffc-aca2-2850020e393d",
                     "path": "2DVector(mode=2)",
