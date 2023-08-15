@@ -30,10 +30,16 @@ namespace Abduction101.Controllers
         
         [EntityDefinition]
         [SerializeField]
+        private Object obliterationRayDefinition;
+        
+        [EntityDefinition]
+        [SerializeField]
         private Object alienDefinition;
 
         private ParticleSystem particles;
         private Entity abductEffect = Entity.NullEntity;
+        
+        private Entity obliterationRayEntity = Entity.NullEntity;
         
         private Entity printEffect = Entity.NullEntity;
         private Entity printedAlien = Entity.NullEntity;
@@ -67,6 +73,12 @@ namespace Abduction101.Controllers
                     printEffect.Get<DestroyableComponent>().destroy = true;
                     printEffect = Entity.NullEntity;
                 }
+                
+                if (obliterationRayEntity.Exists())
+                {
+                    obliterationRayEntity.Get<DestroyableComponent>().destroy = true;
+                    obliterationRayEntity = Entity.NullEntity;
+                }
             }
         }
         
@@ -92,6 +104,12 @@ namespace Abduction101.Controllers
             if (gameHud != null)
             {
                 gameHud.totalBiomass = biomassContainer.value.current;
+            }
+
+            if (states.HasState("ObliterationRay"))
+            {
+                obliterationRayEntity.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
+                return;
             }
 
             if (states.HasState("PrintingAlien"))
@@ -271,6 +289,20 @@ namespace Abduction101.Controllers
 
                 // create new alien in spawn state...
                 // locate effect
+            }
+            
+            if (bufferedInput.HasBufferedAction(input.button3()) && input.button3().isPressed)
+            {
+                bufferedInput.ConsumeBuffer();
+                
+                // start printing new alien...
+                // printAbility.Start();
+                
+                states.EnterState("ObliterationRay");
+
+                obliterationRayEntity = world.CreateEntity(obliterationRayDefinition);
+                obliterationRayEntity.Get<PlayerComponent>().player = entity.Get<PlayerComponent>().player;
+                obliterationRayEntity.Get<PositionComponent>().value = new Vector3(position.value.x, 0, position.value.z);
             }
         }
 

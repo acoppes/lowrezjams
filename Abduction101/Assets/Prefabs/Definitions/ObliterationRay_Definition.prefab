@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationsAsset: {fileID: 11400000, guid: ba45b39158eb6e3428ac271c0c240a18, type: 2}
   spritesMetadata: {fileID: 0}
-  defaultAnimation: Start
+  defaultAnimation: 
   defaultAnimationLoop: 0
 --- !u!114 &5958536773226978853
 MonoBehaviour:
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4258507774620910417, guid: a85672830ed2c9045af0993f84ab5653, type: 3}
   rotationType: 0
-  startingColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  startingColor: {r: 1, g: 1, b: 1, a: 0.7490196}
   sortingLayerType: 0
   sortingOrder: 0
   sortingLayer: 

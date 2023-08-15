@@ -12,7 +12,7 @@ namespace Abduction101.Controllers
         public void OnInit(World world, Entity entity)
         {
             ref var animations = ref entity.Get<AnimationComponent>();
-            animations.Play("Start");
+            animations.Play("Start", 1);
             
             entity.Get<ActiveControllerComponent>().TakeControl(entity, this);
         }
