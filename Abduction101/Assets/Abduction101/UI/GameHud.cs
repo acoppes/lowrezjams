@@ -1,6 +1,7 @@
 ﻿using System;
 using Abduction101.Components;
 using Game.Components;
+using Game.Components.Abilities;
 using Gemserk.Leopotam.Ecs;
 using Leopotam.EcsLite;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Abduction101.UI
         public ElementCountIndicatorUI humanIndicatorUI;
         public ElementCountIndicatorUI alienIndicatorUI;
         public HealthUI healthUI;
+        public ObliterationRayUI obliterationRayUI;
 
         private World world;
 
@@ -33,7 +35,7 @@ namespace Abduction101.UI
                 .Inc<HealthComponent>()
                 .Exc<DisabledComponent>().End();
             mainPlayerFilter = world.EcsWorld.Filter<MainPlayerComponent>()
-                .Inc<HealthComponent>()
+                .Inc<AbilitiesComponent>()
                 .Exc<DisabledComponent>().End();
         }
 
@@ -71,16 +73,24 @@ namespace Abduction101.UI
             }
             
             healthUI.factor = 0;
+            obliterationRayUI.factor = 0;
+            
+            // foreach (var e in mainPlayerFilter)
+            // {
+            //     var entity = world.GetEntity(e);
+            //     var healthComponent = entity.Get<HealthComponent>();
+            //     
+            //     if (healthComponent.aliveType != HealthComponent.AliveType.Alive)
+            //         continue;
+            //
+            //     healthUI.factor = healthComponent.factor;
+            // }
             
             foreach (var e in mainPlayerFilter)
             {
                 var entity = world.GetEntity(e);
-                var healthComponent = entity.Get<HealthComponent>();
-                
-                if (healthComponent.aliveType != HealthComponent.AliveType.Alive)
-                    continue;
-
-                healthUI.factor = healthComponent.factor;
+                var obliterationRayAbility = entity.Get<AbilitiesComponent>().GetAbility("Obliteration");
+                obliterationRayUI.factor = obliterationRayAbility.cooldown.Progress;
             }
             
             humanIndicatorUI.count = humanCount;

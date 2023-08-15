@@ -100,6 +100,7 @@ namespace Abduction101.Controllers
             var abductAbility = abilities.GetAbility("Abduct");
             var consumeAbility = abilities.GetAbility("Consume");
             var printAbility = abilities.GetAbility("Print");
+            var obliterationAbility = abilities.GetAbility("Obliteration");
             
             if (gameHud != null)
             {
@@ -291,12 +292,10 @@ namespace Abduction101.Controllers
                 // locate effect
             }
             
-            if (bufferedInput.HasBufferedAction(input.button3()) && input.button3().isPressed)
+            if (obliterationAbility.isReady && bufferedInput.HasBufferedAction(input.button3()) && input.button3().isPressed)
             {
                 bufferedInput.ConsumeBuffer();
-                
-                // start printing new alien...
-                // printAbility.Start();
+                obliterationAbility.Start();
                 
                 states.EnterState("ObliterationRay");
 
