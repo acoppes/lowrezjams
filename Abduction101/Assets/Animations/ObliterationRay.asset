@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43476aec9d91461b89f0964aa65efc4e, type: 3}
+  m_Name: ObliterationRay
+  m_EditorClassIdentifier: 
+  sourceFolder: Assets/Sprites/Abduction101/ObliterationRay
+  animations:
+  - name: End
+    frames:
+    - sprite: {fileID: 21300000, guid: 962da2ee17b4f294aa8fa3f7d6985e04, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: a2f3a3b6820e68e45839b4112ea746d4, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 1007b1b0ab126354cb90e2ec0b4e5432, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 043a5dfa21b7ca141a13955775d4a6a0, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: fe0be99eb34f89b40ae0f10de33ddabc, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 3b0202500cb79904285f0e2085eb2010, type: 3}
+      time: 0.06666667
+  - name: Loop
+    frames:
+    - sprite: {fileID: 21300000, guid: 90541bd9eaba1474e83ae7c21c86d81f, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 93bfba54f76d7544289273633ef08640, type: 3}
+      time: 0.06666667
+  - name: Start
+    frames:
+    - sprite: {fileID: 21300000, guid: 27c9297c99827e147a605f0e233d14fc, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: ad3f43f963b52294c916e202c6cdabde, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: f50afb9da0a57544b91e60bf5b11e3a7, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: e12edf2caaecfd34cab18f9a8f8d28b7, type: 3}
+      time: 0.06666667
+    - sprite: {fileID: 21300000, guid: 4d438ffee1d980e4aac9ca81b6308147, type: 3}
+      time: 0.06666667
