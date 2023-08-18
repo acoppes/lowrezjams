@@ -1,5 +1,4 @@
 ﻿using System;
-using Abduction101.Components;
 using Game.Components;
 using Game.Components.Abilities;
 using Gemserk.Leopotam.Ecs;
@@ -63,10 +62,10 @@ namespace Abduction101.UI
                 if (healthComponent.aliveType != HealthComponent.AliveType.Alive)
                     continue;
 
-                if (unitTypeComponent.type == 0)
+                if (unitTypeComponent.unitType == 0)
                 {
                     humanCount++;
-                }else if (unitTypeComponent.type == 1)
+                }else if (unitTypeComponent.unitType == 1)
                 {
                     alienCount++;
                 }
