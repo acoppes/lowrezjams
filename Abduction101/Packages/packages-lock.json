@@ -53,7 +53,7 @@
       "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
     },
     "com.gemserk.gamescore": {
-      "version": "file:../../../games/Packages/com.gemserk.gamescore",
+      "version": "file:../../Packages/com.gemserk.gamescore",
       "depth": 0,
       "source": "local",
       "dependencies": {}
