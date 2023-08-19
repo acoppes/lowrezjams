@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Gemserk.Utilities;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Abduction101.Data
 {

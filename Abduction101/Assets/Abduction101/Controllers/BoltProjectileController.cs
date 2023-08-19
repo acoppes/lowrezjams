@@ -2,7 +2,6 @@
 using Game.Components;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Controllers;
-using UnityEngine;
 
 namespace Abduction101.Controllers
 {

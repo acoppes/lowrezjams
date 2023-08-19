@@ -1,12 +1,8 @@
-﻿using Abduction101.Components;
-using Game.Components;
-using Game.Systems;
+﻿using Game.Systems;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Components;
-using Gemserk.Utilities;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
-using UnityEngine;
 
 namespace Abduction101.Systems
 {

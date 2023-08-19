@@ -1,5 +1,4 @@
-﻿using Abduction101.Data;
-using Gemserk.Leopotam.Ecs;
+﻿using Gemserk.Leopotam.Ecs;
 using UnityEngine;
 
 namespace Abduction101.Components

@@ -3,7 +3,6 @@ using Game.Utilities;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Controllers;
 using Gemserk.Leopotam.Ecs.Events;
-using UnityEngine;
 
 namespace Abduction101.Controllers
 {
