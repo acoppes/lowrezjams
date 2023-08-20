@@ -67,10 +67,10 @@ namespace Abduction101.UI
                 if (healthComponent.aliveType != HealthComponent.AliveType.Alive)
                     continue;
 
-                if (unitTypeComponent.unitType == humansType.type)
+                if (humansType.MatchType(unitTypeComponent.unitType))
                 {
                     humanCount++;
-                }else if (unitTypeComponent.unitType == invadersType.type)
+                }else if (invadersType.MatchType(unitTypeComponent.unitType))
                 {
                     alienCount++;
                 }
