@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.Components;
 using Game.Components.Abilities;
+using Game.Utilities;
 using Gemserk.Leopotam.Ecs;
 using Leopotam.EcsLite;
 using UnityEngine;
@@ -65,7 +66,7 @@ namespace Abduction101.UI
                 if (unitTypeComponent.unitType == 0)
                 {
                     humanCount++;
-                }else if (unitTypeComponent.unitType == 1)
+                }else if (unitTypeComponent.unitType == (UnitType)1)
                 {
                     alienCount++;
                 }
