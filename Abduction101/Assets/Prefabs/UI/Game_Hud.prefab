@@ -1322,6 +1322,8 @@ MonoBehaviour:
   obliterationRayUI: {fileID: 7207146975878292563}
   alienCost: 8
   alienIcon: {fileID: 5285317809674848628}
+  humansType: {fileID: 11400000, guid: 42c84871fa2da4a4d8ae1053721c1b66, type: 2}
+  invadersType: {fileID: 11400000, guid: 5e4cd407cb5ea1441b0879991f27750d, type: 2}
 --- !u!1 &3449804192661186935
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.Components;
 using Game.Components.Abilities;
+using Game.DataAssets;
 using Game.Utilities;
 using Gemserk.Leopotam.Ecs;
 using Leopotam.EcsLite;
@@ -27,6 +28,9 @@ namespace Abduction101.UI
         public float totalBiomass;
 
         public Image alienIcon;
+
+        public UnitTypeAsset humansType;
+        public UnitTypeAsset invadersType;
         
         private void Start()
         {
@@ -63,10 +67,10 @@ namespace Abduction101.UI
                 if (healthComponent.aliveType != HealthComponent.AliveType.Alive)
                     continue;
 
-                if (unitTypeComponent.unitType == 0)
+                if (unitTypeComponent.unitType == humansType.type)
                 {
                     humanCount++;
-                }else if (unitTypeComponent.unitType == (UnitType)1)
+                }else if (unitTypeComponent.unitType == invadersType.type)
                 {
                     alienCount++;
                 }
