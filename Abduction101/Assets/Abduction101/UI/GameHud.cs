@@ -2,7 +2,6 @@
 using Game.Components;
 using Game.Components.Abilities;
 using Game.DataAssets;
-using Game.Utilities;
 using Gemserk.Leopotam.Ecs;
 using Leopotam.EcsLite;
 using UnityEngine;
