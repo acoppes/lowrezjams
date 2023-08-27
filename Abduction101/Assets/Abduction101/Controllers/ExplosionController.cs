@@ -1,4 +1,5 @@
-﻿using Game.Components;
+﻿using System.Collections.Generic;
+using Game.Components;
 using Game.Utilities;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Components;
@@ -21,13 +22,14 @@ namespace Abduction101.Controllers
 
             if (!states.HasState("Explosion"))
             {
-                var targets = world.GetTargets(new RuntimeTargetingParameters()
+                var targets = new List<Target>();
+                world.GetTargets(new RuntimeTargetingParameters()
                 {
                     filter = targeting.targeting,
                     direction = Vector3.right,
                     position = position.value,
-                    player = entity.Get<PlayerComponent>().player
-                });
+                    alliedPlayersBitmask = PlayerAllianceExtensions.GetAlliedPlayers(entity.Get<PlayerComponent>().player)
+                }, targets);
 
                 foreach (var target in targets)
                 {

@@ -42,6 +42,13 @@
       },
       "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
     },
+    "com.gemserk.bitmasktypes": {
+      "version": "0.0.14",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.gemserk.buildtools": {
       "version": "https://github.com/acoppes/unity-gemserk-utilities.git?path=/Packages/com.gemserk.buildtools",
       "depth": 0,
@@ -63,7 +70,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "a1eaf94f6b28489c84947ec468b247face584b2d"
     },
     "com.gemserk.refactortools": {
       "version": "0.0.8",
