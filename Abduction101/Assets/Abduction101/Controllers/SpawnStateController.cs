@@ -14,13 +14,13 @@ namespace Abduction101.Controllers
     {
         public void OnUpdate(World world, Entity entity, float dt)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             var spawn = abilities.GetAbility("Spawn");
             ref var animations = ref entity.Get<AnimationComponent>();
             
-            if (states.HasState("Spawning"))
+            if (states.HasState(PeopleStates.Spawning))
             {
                 if (animations.IsPlaying("Spawn") && animations.isCompleted)
                 {
@@ -39,14 +39,14 @@ namespace Abduction101.Controllers
 
         private void StartSpawning(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             var spawn = abilities.GetAbility("Spawn");
             ref var animations = ref entity.Get<AnimationComponent>();
             
             activeController.TakeControl(entity, this);
-            states.EnterState("Spawning");
+            states.Enter(PeopleStates.Spawning);
             spawn.Start();
             
             if (entity.Has<MovementComponent>())
@@ -62,13 +62,13 @@ namespace Abduction101.Controllers
         
         private void StopSpawning(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             var spawn = abilities.GetAbility("Spawn");
             
             activeController.ReleaseControl(this);
-            states.ExitState("Spawning");
+            states.Exit(PeopleStates.Spawning);
             spawn.Stop(Ability.StopType.Completed);
             
             // not sure about the movement speed? recover it?

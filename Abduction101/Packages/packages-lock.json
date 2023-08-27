@@ -70,7 +70,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a1eaf94f6b28489c84947ec468b247face584b2d"
+      "hash": "2b73bf7042ae916ec7e8489d9ddd264eccfd8133"
     },
     "com.gemserk.refactortools": {
       "version": "0.0.8",

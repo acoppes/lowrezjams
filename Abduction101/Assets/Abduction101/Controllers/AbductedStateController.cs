@@ -15,11 +15,11 @@ namespace Abduction101.Controllers
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var abduction = ref entity.Get<AbductionComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
-            if (states.HasState("IsBeingAbducted"))
+            if (states.HasState(PeopleStates.Abducting))
             {
                 if (!abduction.isBeingAbducted)
                 {
@@ -37,7 +37,7 @@ namespace Abduction101.Controllers
 
         private void StartAbduction(World world, Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var animations = ref entity.Get<AnimationComponent>();
             ref var abduction = ref entity.Get<AbductionComponent>();
@@ -57,7 +57,7 @@ namespace Abduction101.Controllers
                 movement.movingDirection = Vector3.zero;
             }
             
-            states.EnterState("IsBeingAbducted");
+            states.Enter(PeopleStates.Abducting);
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.Rotate;
@@ -80,12 +80,12 @@ namespace Abduction101.Controllers
         
         private void StopAbduction(World world, Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var gravityComponent = ref entity.Get<GravityComponent>();
             
             activeController.ReleaseControl(this);
-            states.ExitState("IsBeingAbducted");
+            states.Exit(PeopleStates.Abducting);
             
             // ref var model = ref entity.Get<ModelComponent>();
             // model.rotation = ModelComponent.RotationType.FlipToLookingDirection;

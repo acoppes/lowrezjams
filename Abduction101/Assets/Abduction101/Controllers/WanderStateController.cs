@@ -16,15 +16,15 @@ namespace Abduction101.Controllers
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
 
-            if (states.HasState("Wandering"))
+            if (states.HasState(PeopleStates.Wandering))
             {
                 ref var movement = ref entity.Get<MovementComponent>();
                 ref var input = ref entity.Get<InputComponent>();
                 
-                if (!states.HasState("Wandering.Timeout"))
+                if (!states.HasState(PeopleStates.Wandering_Timeout))
                 {
                     StopWandering(entity);
                 }
@@ -42,7 +42,7 @@ namespace Abduction101.Controllers
                 return;
             }
             
-            if (!states.HasState("Wandering.Cooldown"))
+            if (!states.HasState(PeopleStates.Wandering_Cooldown))
             {
                 if (activeController.CanInterrupt(entity, this))
                 {
@@ -53,7 +53,7 @@ namespace Abduction101.Controllers
 
         private void StartWandering(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             activeController.TakeControl(entity, this);
@@ -67,8 +67,8 @@ namespace Abduction101.Controllers
             ref var input = ref entity.Get<InputComponent>();
             input.direction().vector2 = randomDirection;
                 
-            states.EnterState("Wandering");
-            states.EnterState("Wandering.Timeout", wanderTime.RandomInRange());
+            states.Enter(PeopleStates.Wandering);
+            states.Enter(PeopleStates.Wandering_Timeout, wanderTime.RandomInRange());
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
@@ -76,7 +76,7 @@ namespace Abduction101.Controllers
         
         private void StopWandering(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             activeController.ReleaseControl(this);
@@ -87,9 +87,10 @@ namespace Abduction101.Controllers
             ref var movement = ref entity.Get<MovementComponent>();
             movement.movingDirection = Vector3.zero;
                 
-            states.ExitStatesAndSubStates("Wandering");
+            states.Exit(PeopleStates.Wandering);
+            states.Exit(PeopleStates.Wandering_Timeout);
             
-            states.EnterState("Wandering.Cooldown", idleTime.RandomInRange());
+            states.Enter(PeopleStates.Wandering_Cooldown, idleTime.RandomInRange());
         }
         
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)

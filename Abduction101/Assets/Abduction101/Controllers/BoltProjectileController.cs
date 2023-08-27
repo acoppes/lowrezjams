@@ -1,5 +1,4 @@
-﻿using Abduction101.Systems;
-using Game.Components;
+﻿using Game.Components;
 using Game.Systems;
 using Gemserk.Leopotam.Ecs;
 using Gemserk.Leopotam.Ecs.Controllers;

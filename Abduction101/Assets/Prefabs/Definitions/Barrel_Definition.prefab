@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 4560134891049320346}
   - component: {fileID: 3023512734138686297}
   - component: {fileID: 1081443465472187541}
-  - component: {fileID: 4710753607565340890}
   - component: {fileID: 2653003529035319301}
   - component: {fileID: 2351545980005689176}
   - component: {fileID: 8079937930985942625}
@@ -30,6 +29,7 @@ GameObject:
   - component: {fileID: 5055696637432264470}
   - component: {fileID: -2401896812564974756}
   - component: {fileID: 5509427168381363764}
+  - component: {fileID: 1990533354310275599}
   m_Layer: 0
   m_Name: Barrel_Definition
   m_TagString: Untagged
@@ -151,20 +151,6 @@ MonoBehaviour:
   controllerObject: {fileID: 6156498409161673986}
   sharedInstance: 1
   hasStateController: 1
---- !u!114 &4710753607565340890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050064341307228834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61184da8a7c4e3db68e227b21f6fb50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingStates: []
-  debugTransitions: 0
 --- !u!114 &2653003529035319301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +346,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minZ: 0
   maxZ: 0
+--- !u!114 &1990533354310275599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050064341307228834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926852b699844f0f83acd477c81b375e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typesAsset: {fileID: 0}
+  debugTransitions: 0
 --- !u!1 &4742982672803757943
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &41787433558181392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6147857413200059534}
+  - component: {fileID: 4740683289159927600}
+  m_Layer: 0
+  m_Name: StatesTransitionsSystemV2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6147857413200059534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41787433558181392}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6416209615785311620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4740683289159927600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41787433558181392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0321b0a0d54b908c6e4febdd790e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &480764807491511382
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,6 +130,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11bb28a0fb2b4525bb08255b54c6adda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &520528762359495849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459335684565463738}
+  - component: {fileID: 6067549293577193167}
+  m_Layer: 0
+  m_Name: StatesTransitionControllerCallbacksSystemV2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &459335684565463738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520528762359495849}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6416209615785311620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6067549293577193167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520528762359495849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba59325ca75491c9b311d835174b0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &582027125557858821
@@ -2480,7 +2568,9 @@ Transform:
   - {fileID: 3469935398439825090}
   - {fileID: 6633361176732733805}
   - {fileID: 8162937087595125616}
+  - {fileID: 6147857413200059534}
   - {fileID: 7320423958800072929}
+  - {fileID: 459335684565463738}
   - {fileID: 3643104576360250801}
   - {fileID: 4130223206932491280}
   - {fileID: 8257443558861827029}
@@ -2489,6 +2579,7 @@ Transform:
   - {fileID: 6416209616987621273}
   - {fileID: 4225196935522519673}
   - {fileID: 6416209616431781374}
+  - {fileID: 6550967366654560042}
   - {fileID: 6672376381353418066}
   - {fileID: 1764469533522567153}
   - {fileID: 2517271598902533893}
@@ -3857,6 +3948,50 @@ MonoBehaviour:
   circleColliderPrefab: {fileID: 5395193768435073094}
   boxColliderPrefab: {fileID: 3771410483300078424}
   capsuleColliderPrefab: {fileID: 3204986951765687573}
+--- !u!1 &8003732101289273376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550967366654560042}
+  - component: {fileID: 3443307897891948378}
+  m_Layer: 0
+  m_Name: StatesSystemV2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550967366654560042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003732101289273376}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6416209615785311620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3443307897891948378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003732101289273376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ee09178046414dbdec0c5860854296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8138266246473129162
 GameObject:
   m_ObjectHideFlags: 0

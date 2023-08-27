@@ -80,7 +80,6 @@ GameObject:
   - component: {fileID: 8699664948505395703}
   - component: {fileID: 2228156306910718865}
   - component: {fileID: 9137493689067080488}
-  - component: {fileID: 1754954228941669947}
   - component: {fileID: 4240670316915537577}
   - component: {fileID: 5599089752451677651}
   - component: {fileID: 2357424078594009008}
@@ -90,6 +89,7 @@ GameObject:
   - component: {fileID: 7040985309080851842}
   - component: {fileID: 8634698215498224025}
   - component: {fileID: 7350358221242111371}
+  - component: {fileID: 2005587887078603323}
   m_Layer: 0
   m_Name: Alien_Definition
   m_TagString: Untagged
@@ -251,6 +251,7 @@ MonoBehaviour:
   baseSpeed: 1
   constraints: 0
   initialSpeedType: 1
+  normalizeDirection: 1
 --- !u!114 &7288934308409645361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,20 +338,6 @@ MonoBehaviour:
   controllerObject: {fileID: 2873780973292583295}
   sharedInstance: 0
   hasStateController: 1
---- !u!114 &1754954228941669947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2862796041920060664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61184da8a7c4e3db68e227b21f6fb50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingStates: []
-  debugTransitions: 0
 --- !u!114 &4240670316915537577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +487,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitTypeAsset: {fileID: 11400000, guid: 5e4cd407cb5ea1441b0879991f27750d, type: 2}
   type: 0
+--- !u!114 &2005587887078603323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862796041920060664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926852b699844f0f83acd477c81b375e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typesAsset: {fileID: 11400000, guid: 6199b7d0283485d47ab8cdc89195219d, type: 2}
+  debugTransitions: 0
 --- !u!1 &2873780973292583295
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +707,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targeting:
-    areaType: 0
     distanceType: 1
     range:
       Min: 0

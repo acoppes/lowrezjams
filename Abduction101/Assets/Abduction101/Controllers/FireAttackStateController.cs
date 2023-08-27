@@ -18,14 +18,14 @@ namespace Abduction101.Controllers
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             ref var animations = ref entity.Get<AnimationComponent>();
             
             var attack = abilities.GetAbility("Attack");
             
-            if (states.HasState("Attack"))
+            if (states.HasState(PeopleStates.Attacking))
             {
                 if (animations.IsPlaying("AttackLoop") && attack.executionTime > attack.startTime.Total)
                 {
@@ -69,7 +69,7 @@ namespace Abduction101.Controllers
 
         private void StartAttack(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             ref var animations = ref entity.Get<AnimationComponent>();
@@ -93,14 +93,14 @@ namespace Abduction101.Controllers
                 movement.movingDirection = Vector3.zero;
             }
             
-            states.EnterState("Attack");
+            states.Enter(PeopleStates.Attacking);
             
             animations.Play("AttackLoop");
         }
         
         private void StopAttack(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             ref var animations = ref entity.Get<AnimationComponent>();
@@ -110,7 +110,7 @@ namespace Abduction101.Controllers
             attack.Stop(Ability.StopType.Completed);
             
             activeController.ReleaseControl(this);
-            states.ExitState("Attack");
+            states.Exit(PeopleStates.Attacking);
             
             if (entity.Has<MovementComponent>())
             {

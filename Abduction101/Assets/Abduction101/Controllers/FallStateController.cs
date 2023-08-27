@@ -15,14 +15,14 @@ namespace Abduction101.Controllers
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             var position = entity.Get<PositionComponent>();
             var gravity = entity.Get<GravityComponent>();
             ref var fall = ref entity.Get<FallStateComponent>();
             
-            if (states.HasState("Falling"))
+            if (states.HasState(PeopleStates.Falling))
             {
                 if (gravity.inContactWithGround)
                 {
@@ -56,7 +56,7 @@ namespace Abduction101.Controllers
 
         private void StartFalling(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             activeController.TakeControl(entity, this);
@@ -68,7 +68,7 @@ namespace Abduction101.Controllers
                 movement.movingDirection = Vector3.zero;
             }
             
-            states.EnterState("Falling");
+            states.Enter(PeopleStates.Falling);
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.Rotate;
@@ -85,11 +85,11 @@ namespace Abduction101.Controllers
         
         private void StopFalling(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             activeController.ReleaseControl(this);
-            states.ExitState("Falling");
+            states.Exit(PeopleStates.Falling);
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
