@@ -33,7 +33,7 @@ namespace Abduction101.UI
         
         private void Start()
         {
-            world = World.Instance;
+            world = World.Default;
             unitsFilter = world.EcsWorld.Filter<UnitTypeComponent>()
                 .Inc<HealthComponent>()
                 .Exc<DisabledComponent>().End();

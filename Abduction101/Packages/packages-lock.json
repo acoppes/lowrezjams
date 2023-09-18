@@ -22,7 +22,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2c79b368fb5be841d81851754a93d83e44953a6b"
+      "hash": "b83ee23be8c0de65c66c3c1ff2ea50b6d0efbee2"
     },
     "com.esotericsoftware.spine.spine-unity": {
       "version": "https://github.com/EsotericSoftware/spine-runtimes.git?path=spine-unity/Assets/Spine#4.1",
@@ -31,7 +31,7 @@
       "dependencies": {
         "com.esotericsoftware.spine.spine-csharp": "4.1.0"
       },
-      "hash": "2c79b368fb5be841d81851754a93d83e44953a6b"
+      "hash": "b83ee23be8c0de65c66c3c1ff2ea50b6d0efbee2"
     },
     "com.gemserk.aseprite": {
       "version": "https://github.com/acoppes/unity-gemserk-utilities.git?path=/Packages/com.gemserk.aseprite",
@@ -40,10 +40,10 @@
       "dependencies": {
         "com.gemserk.utilities": "0.0.3"
       },
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.gemserk.bitmasktypes": {
-      "version": "0.0.11",
+      "version": "0.0.14",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -57,7 +57,7 @@
         "com.gemserk.refactortools": "0.0.6",
         "com.gemserk.utilities": "0.0.3"
       },
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.gemserk.gamescore": {
       "version": "file:../../../games/Packages/com.gemserk.gamescore",
@@ -70,7 +70,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.gemserk.refactortools": {
       "version": "0.0.8",
@@ -80,7 +80,7 @@
       "url": "https://package.openupm.com"
     },
     "com.gemserk.selectionhistory": {
-      "version": "1.1.14",
+      "version": "1.1.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -93,7 +93,7 @@
       "dependencies": {
         "com.gemserk.utilities": "0.0.3"
       },
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.gemserk.tools.gameobjectbrush": {
       "version": "0.0.9",
@@ -107,7 +107,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.gemserk.triggers.extensions": {
       "version": "https://github.com/acoppes/unity-gemserk-utilities.git?path=/Packages/com.gemserk.triggers.extensions",
@@ -120,7 +120,7 @@
         "com.gemserk.leopotamecs": "0.2.3",
         "com.domybest.mybox": "1.7.0"
       },
-      "hash": "285b8d7154cb2f66c3ccac1399b9e4d378a22e48"
+      "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.gemserk.uiguidesandrulers": {
       "version": "https://github.com/acoppes/UnityUIGuidesAndRulers.git#package",
@@ -134,7 +134,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "40cb61e861c7221c5cfb7b8cbb30519c565c5d2f"
+      "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.leoecscommunity.ecslite": {
       "version": "1.0.0",
@@ -235,7 +235,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.7",
+      "version": "1.8.8",
       "depth": 2,
       "source": "registry",
       "dependencies": {
@@ -293,7 +293,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.6.3",
+      "version": "1.7.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {

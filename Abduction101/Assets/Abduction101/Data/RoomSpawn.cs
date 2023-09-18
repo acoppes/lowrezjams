@@ -1,3 +1,4 @@
+using Game;
 using Gemserk.Leopotam.Ecs;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Abduction101.Data
 
         private void Start()
         {
-            var world = World.Instance;
+            var world = World.Default;
             if (world == null)
             {
                 return;
