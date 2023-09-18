@@ -2570,9 +2570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a13de81ea045d59db72bd28f929121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityDefinition: {fileID: 713005415}
   onInstantiateActionType: 2
   instantiationType: 1
+  entityDefinition: {fileID: 713005415}
 --- !u!1 &562029070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,9 +2792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a13de81ea045d59db72bd28f929121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityDefinition: {fileID: 0}
   onInstantiateActionType: 2
   instantiationType: 1
+  entityDefinition: {fileID: 0}
 --- !u!114 &594680984
 MonoBehaviour:
   m_ObjectHideFlags: 0

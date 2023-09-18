@@ -3,7 +3,6 @@ using Game.Components;
 using Game.Components.Abilities;
 using Game.Controllers;
 using Gemserk.Leopotam.Ecs;
-using Gemserk.Leopotam.Ecs.Components;
 using Gemserk.Leopotam.Ecs.Controllers;
 using Gemserk.Leopotam.Ecs.Events;
 using Gemserk.Utilities;
@@ -19,7 +18,6 @@ namespace Abduction101.Controllers
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
-            ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
 
@@ -55,7 +53,6 @@ namespace Abduction101.Controllers
 
         private void StartRunAway(World world, Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
 
@@ -75,8 +72,6 @@ namespace Abduction101.Controllers
 
             ref var input = ref entity.Get<InputComponent>();
             input.direction().vector2 = direction;
-                
-            states.EnterState("RunAway");
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.FlipToLookingDirection;
@@ -90,7 +85,6 @@ namespace Abduction101.Controllers
         
         private void StopRunAway(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             ref var abilities = ref entity.Get<AbilitiesComponent>();
             
@@ -105,8 +99,6 @@ namespace Abduction101.Controllers
             
             ref var movement = ref entity.Get<MovementComponent>();
             movement.movingDirection = Vector3.zero;
-                
-            states.ExitStatesAndSubStates("RunAway");
         }
         
         public bool CanBeInterrupted(Entity entity, IActiveController activeController)

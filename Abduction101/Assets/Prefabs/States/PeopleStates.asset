@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5013196ff02a4fc6b87cca0033f44bab, type: 3}
+  m_Name: PeopleStates
+  m_EditorClassIdentifier: 
+  types:
+  - {fileID: 11400000, guid: acb1a982b2083f24da6e5f7207cddd9d, type: 2}
+  - {fileID: 11400000, guid: 6ac7865c43c11c14eb94818a3b766b67, type: 2}
+  - {fileID: 11400000, guid: 64976dd4c7abb37449a0641b5443b022, type: 2}
+  - {fileID: 11400000, guid: a5cd80cca3926904ba2f9e632a7cafdd, type: 2}
+  - {fileID: 11400000, guid: 23f7582b3b0cdc04b81f5eb9dd56f782, type: 2}
+  - {fileID: 11400000, guid: ab6a992bc5f2b8f42bb5003133e7567b, type: 2}
+  - {fileID: 11400000, guid: cb695575bb5a57547acd24917a314491, type: 2}
+  - {fileID: 11400000, guid: 592cd336f4642424fb305feb8c0941e3, type: 2}
+  generateCode: 1
+  className: PeopleStates
+  namespaceName: Abduction101
+  outputFolder: Abduction101/States
+  partialClass: 1
+  appendGeneratedToFileName: 1

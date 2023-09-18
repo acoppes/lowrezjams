@@ -1,5 +1,4 @@
-﻿using Abduction101.Systems;
-using Game.Components;
+﻿using Game.Components;
 using Game.Controllers;
 using Game.Systems;
 using Gemserk.Leopotam.Ecs;
@@ -16,9 +15,9 @@ namespace Abduction101.Controllers
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             
-            if (states.TryGetState("Knockback", out var state))
+            if (states.TryGetState(PeopleStates.Knockback, out var state))
             {
                 if (state.time > 0.1f)
                 {
@@ -29,7 +28,7 @@ namespace Abduction101.Controllers
 
         private void StartAction(World world, Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             activeController.TakeControl(entity, this);
@@ -41,7 +40,7 @@ namespace Abduction101.Controllers
                 movement.movingDirection = Vector3.zero;
             }
             
-            states.EnterState("Knockback");
+            states.Enter(PeopleStates.Knockback);
             
             ref var model = ref entity.Get<ModelComponent>();
             model.rotation = ModelComponent.RotationType.Rotate;
@@ -56,11 +55,11 @@ namespace Abduction101.Controllers
         
         private void StopAction(Entity entity)
         {
-            ref var states = ref entity.Get<StatesComponent>();
+            ref var states = ref entity.Get<StatesComponentV2>();
             ref var activeController = ref entity.Get<ActiveControllerComponent>();
             
             activeController.ReleaseControl(this);
-            states.ExitState("Knockback");
+            states.Exit(PeopleStates.Knockback);
             
             entity.Get<GravityComponent>().disabled = false;
 

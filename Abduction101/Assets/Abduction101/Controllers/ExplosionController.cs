@@ -14,8 +14,6 @@ namespace Abduction101.Controllers
         public Targeting targeting;
 
         public float damage = 2.0f;
-
-        private List<Target> targets = new List<Target>();
         
         public void OnUpdate(World world, Entity entity, float dt)
         {
@@ -24,9 +22,8 @@ namespace Abduction101.Controllers
 
             if (!states.HasState("Explosion"))
             {
-                targets.Clear();
-                
-                var count = world.GetTargets(new RuntimeTargetingParameters()
+                var targets = new List<Target>();
+                world.GetTargets(new RuntimeTargetingParameters()
                 {
                     filter = targeting.targeting,
                     direction = Vector3.right,
