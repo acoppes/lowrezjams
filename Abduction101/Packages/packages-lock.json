@@ -60,10 +60,11 @@
       "hash": "1fd34486a10f134aa9c3e6a0a064f318eb04ef9b"
     },
     "com.gemserk.gamescore": {
-      "version": "file:../../../games/Packages/com.gemserk.gamescore",
+      "version": "https://github.com/acoppes/unity-gemserk-utilities.git?path=/Packages/com.gemserk.gamescore",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "065f70a773d2a0dd6040bf8d675873de924b5030"
     },
     "com.gemserk.leopotamecs": {
       "version": "https://github.com/acoppes/unity-gemserk-utilities.git?path=/Packages/com.gemserk.leopotamecs",
@@ -284,7 +285,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.24",
+      "version": "3.0.25",
       "depth": 0,
       "source": "registry",
       "dependencies": {
